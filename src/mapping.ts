@@ -1,128 +1,136 @@
-import { BigDecimal, ethereum } from "@graphprotocol/graph-ts";
-
-import { Approval, ERC20, Transfer } from "../generated/ERC20/ERC20";
 import {
-  Account,
-  Token,
-  TokenApproval,
-  TokenBalance,
-} from "../generated/schema";
+	Address,
+	log,
+} from '@graphprotocol/graph-ts'
 
-const zeroAddress = '0x0000000000000000000000000000000000000000';
+import {
+	ERC20Transfer,
+} from '../generated/schema'
 
-function loadOrCreateAccount(address: string): Account | null {
-  let account = Account.load(address);
-  if (!account) {
-    account = new Account(address);
-    account.save();
+import {
+	Transfer as TransferEvent,
+} from '../generated/EIP20/IERC20'
+
+import {
+	decimals,
+	events,
+	transactions,
+} from '@amxx/graphprotocol-utils'
+
+import {
+	Account,
+	ERC20Contract,
+	ERC20Balance,
+} from '../generated/schema'
+
+import {
+	IERC20,
+} from '../generated/EIP20/IERC20'
+
+import {
+	constants,
+} from '@amxx/graphprotocol-utils'
+
+const DEFAULT_DECIMALS = 18
+const MAX_DECIMALS = 36 // safe cap for BigDecimal math
+
+function normalizeDecimals(dec: i32): i32 {
+  if (dec < 0) return 0
+  if (dec > MAX_DECIMALS) {
+    log.warning('Capping absurd decimals {} to {}', [dec.toString(), MAX_DECIMALS.toString()])
+    return MAX_DECIMALS
   }
-  return account;
+  return dec
 }
 
-function loadOrCreateToken(event: ethereum.Event): Token | null {
-  let token = Token.load(event.address.toHex());
-  if (!token) {
-    let erc20 = ERC20.bind(event.address);
-
-    let nameResult = erc20.try_name();
-    if (nameResult.reverted) {
-      return null;
-    }
-
-    let symbolResult = erc20.try_symbol();
-    if (symbolResult.reverted) {
-      return null;
-    }
-
-    let decimalsResult = erc20.try_decimals();
-    if (decimalsResult.reverted) {
-      return null;
-    }
-
-    // Ignore any weird tokens to avoid overflowing the `decimals` field (which is an i32)
-    // On mainnet for example there is at least one token which has a huge value for `decimals`
-    // and that would overflow the Token entity's i32 field for the decimals
-    if (decimalsResult.value.toBigDecimal().gt(BigDecimal.fromString("255"))) {
-      return null;
-    }
-
-    token = new Token(event.address.toHex());
-    token.name = nameResult.value;
-    token.symbol = symbolResult.value;
-    token.decimals = decimalsResult.value.toI32();
-    token.save();
-  }
-  return token;
+export function fetchAccount(address: Address): Account {
+	let account = new Account(address)
+	account.save()
+	return account
 }
 
-export function handleApproval(event: Approval): void {
-  let token = loadOrCreateToken(event);
-  if (!token) {
-    return;
-  }
+export function fetchERC20(address: Address): ERC20Contract {
+	let contract = ERC20Contract.load(address)
 
-  let owner = event.params.owner.toHex();
-  let spender = event.params.spender.toHex();
-  let value = event.params.value.toBigDecimal();
+	if (contract == null) {
+		let endpoint         = IERC20.bind(address)
+		let name             = endpoint.try_name()
+		let symbol           = endpoint.try_symbol()
+		let decimals         = endpoint.try_decimals()
 
-  let ownerAccount = loadOrCreateAccount(owner);
-  let spenderAccount = loadOrCreateAccount(spender);
+		// Common
+		contract             = new ERC20Contract(address)
+		contract.name        = name.reverted     ? null : name.value
+		contract.symbol      = symbol.reverted   ? null : symbol.value
+		contract.decimals    = decimals.reverted ? DEFAULT_DECIMALS   : normalizeDecimals(decimals.value)
+		contract.totalSupply = fetchERC20Balance(contract as ERC20Contract, null).id
+		contract.asAccount   = address
+		contract.save()
 
-  if (!ownerAccount || !spenderAccount) {
-    return;
-  }
+		let account          = fetchAccount(address)
+		account.asERC20      = address
+		account.save()
+	}
 
-  let tokenApproval = TokenApproval.load(
-    token.id + "-" + ownerAccount.id + "-" + spenderAccount.id
-  );
-  if (!tokenApproval) {
-    tokenApproval = new TokenApproval(
-      token.id + "-" + ownerAccount.id + "-" + spenderAccount.id
-    );
-    tokenApproval.token = token.id;
-    tokenApproval.ownerAccount = ownerAccount.id;
-    tokenApproval.spenderAccount = spenderAccount.id;
-  }
-  tokenApproval.value = value;
-  tokenApproval.save();
+	return contract as ERC20Contract
 }
 
-export function handleTransfer(event: Transfer): void {
-  let token = loadOrCreateToken(event);
-  if (!token) {
-    return;
-  }
+export function fetchERC20Balance(contract: ERC20Contract, account: Account | null): ERC20Balance {
+	let id      = contract.id.toHex().concat('/').concat(account ? account.id.toHex() : 'totalSupply')
+	let balance = ERC20Balance.load(id)
 
-  let from = event.params.from.toHex();
-  let to = event.params.to.toHex();
-  let value = event.params.value.toBigDecimal();
+	if (balance == null) {
+		balance                 = new ERC20Balance(id)
+		balance.contract        = contract.id
+		balance.account         = account ? account.id : null
+		balance.value           = constants.BIGDECIMAL_ZERO
+		balance.valueExact      = constants.BIGINT_ZERO
+		balance.save()
+	}
 
-  let fromAccount = loadOrCreateAccount(from);
-  let toAccount = loadOrCreateAccount(to);
+	return balance as ERC20Balance
+}
 
-  if (!fromAccount || !toAccount) {
-    return;
-  }
+export function handleTransfer(event: TransferEvent): void {
+	let contract   = fetchERC20(event.address)
+	let ev         = new ERC20Transfer(events.id(event))
+	ev.emitter     = contract.id
+	ev.transaction = transactions.log(event).id
+	ev.timestamp   = event.block.timestamp
+	ev.contract    = contract.id
+	ev.value       = decimals.toDecimals(event.params.value, contract.decimals)
+	ev.valueExact  = event.params.value
 
-  if (fromAccount.id != zeroAddress) {
-    let fromTokenBalance = TokenBalance.load(token.id + "-" + fromAccount.id);
-    if (!fromTokenBalance) {
-      fromTokenBalance = new TokenBalance(token.id + "-" + fromAccount.id);
-      fromTokenBalance.token = token.id;
-      fromTokenBalance.account = fromAccount.id;
-      fromTokenBalance.value = BigDecimal.fromString("0");
-    }
-    fromTokenBalance.value = fromTokenBalance.value.minus(value);
-    fromTokenBalance.save();
-  }
+	if (event.params.from == Address.zero()) {
+		let totalSupply        = fetchERC20Balance(contract, null)
+		totalSupply.valueExact = totalSupply.valueExact.plus(event.params.value)
+		totalSupply.value      = decimals.toDecimals(totalSupply.valueExact, contract.decimals)
+		totalSupply.save()
+	} else {
+		let from               = fetchAccount(event.params.from)
+		let balance            = fetchERC20Balance(contract, from)
+		balance.valueExact     = balance.valueExact.minus(event.params.value)
+		balance.value          = decimals.toDecimals(balance.valueExact, contract.decimals)
+		balance.save()
 
-  let toTokenBalance = TokenBalance.load(token.id + "-" + toAccount.id);
-  if (!toTokenBalance) {
-    toTokenBalance = new TokenBalance(token.id + "-" + toAccount.id);
-    toTokenBalance.token = token.id;
-    toTokenBalance.account = toAccount.id;
-    toTokenBalance.value = BigDecimal.fromString("0");
-  }
-  toTokenBalance.value = toTokenBalance.value.plus(value);
-  toTokenBalance.save();
+		ev.from                = from.id
+		ev.fromBalance         = balance.id
+	}
+
+	if (event.params.to == Address.zero()) {
+		let totalSupply        = fetchERC20Balance(contract, null)
+		totalSupply.valueExact = totalSupply.valueExact.minus(event.params.value)
+		totalSupply.value      = decimals.toDecimals(totalSupply.valueExact, contract.decimals)
+		totalSupply.save()
+	} else {
+		let to                 = fetchAccount(event.params.to)
+		let balance            = fetchERC20Balance(contract, to)
+		balance.valueExact     = balance.valueExact.plus(event.params.value)
+		balance.value          = decimals.toDecimals(balance.valueExact, contract.decimals)
+		balance.save()
+
+		ev.to                  = to.id
+		ev.toBalance           = balance.id
+	}
+	ev.save()
 }
