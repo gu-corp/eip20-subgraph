@@ -1,30 +1,52 @@
-type Token @entity {
-  id: ID!
-  name: String!
-  symbol: String!
-  decimals: Int!
-  balances: [TokenBalance!]! @derivedFrom(field: "token")
-  approvals: [TokenApproval!]! @derivedFrom(field: "token")
-}
-
 type Account @entity {
-  id: ID!
-  balances: [TokenBalance!]! @derivedFrom(field: "account")
-  incomingApprovals: [TokenApproval!]! @derivedFrom(field: "spenderAccount")
-  outgoingApprovals: [TokenApproval!]! @derivedFrom(field: "ownerAccount")
+  id: Bytes!
+  asERC20: ERC20Contract
+  ERC20balances: [ERC20Balance!]! @derivedFrom(field: "account")
+  ERC20transferFromEvent: [ERC20Transfer!]! @derivedFrom(field: "from")
+  ERC20transferToEvent: [ERC20Transfer!]! @derivedFrom(field: "to")
+  events: [Event!]! @derivedFrom(field: "emitter")
 }
-
-type TokenBalance @entity {
-  id: ID!
-  token: Token!
-  account: Account!
-  value: BigDecimal!
+type ERC20Contract @entity(immutable: true) {
+  id: Bytes!
+  asAccount: Account!
+  name: String
+  symbol: String
+  decimals: Int!
+  totalSupply: ERC20Balance!
+  balances: [ERC20Balance!]! @derivedFrom(field: "contract")
+  transfers: [ERC20Transfer!]! @derivedFrom(field: "contract")
 }
-
-type TokenApproval @entity {
+type ERC20Balance @entity {
   id: ID!
-  token: Token!
-  ownerAccount: Account!
-  spenderAccount: Account!
+  contract: ERC20Contract!
+  account: Account
   value: BigDecimal!
+  valueExact: BigInt!
+  transferFromEvent: [ERC20Transfer!]! @derivedFrom(field: "fromBalance")
+  transferToEvent: [ERC20Transfer!]! @derivedFrom(field: "toBalance")
+}
+type ERC20Transfer implements Event @entity(immutable: true) {
+  id: ID!
+  emitter: Account!
+  transaction: Transaction!
+  timestamp: BigInt!
+  contract: ERC20Contract!
+  from: Account
+  fromBalance: ERC20Balance
+  to: Account
+  toBalance: ERC20Balance
+  value: BigDecimal!
+  valueExact: BigInt!
+}
+interface Event {
+  id: ID!
+  transaction: Transaction!
+  emitter: Account!
+  timestamp: BigInt!
+}
+type Transaction @entity(immutable: true) {
+  id: ID!
+  timestamp: BigInt!
+  blockNumber: BigInt!
+  events: [Event!]! @derivedFrom(field: "transaction")
 }

@@ -5,12 +5,16 @@
   "scripts": {
     "codegen": "graph codegen",
     "build": "graph build",
-    "deploy": "graph deploy georgeroman/erc20-subgraph --ipfs https://api.thegraph.com/ipfs/ --node https://api.thegraph.com/deploy/"
+    "deploy": "graph deploy erc-20-subgraph --ipfs https://api.thegraph.com/ipfs/ --node https://api.studio.thegraph.com/deploy/"
   },
   "author": "George Roman",
   "license": "MIT",
+  "dependencies": {
+    "@amxx/graphprotocol-utils": "^1.1.0",
+    "@openzeppelin/contracts": "^5.0.2"
+  },
   "devDependencies": {
-    "@graphprotocol/graph-cli": "^0.20.0",
-    "@graphprotocol/graph-ts": "^0.20.0"
+    "@graphprotocol/graph-cli": "^0.81.0",
+    "@graphprotocol/graph-ts": "^0.35.1"
   }
 }

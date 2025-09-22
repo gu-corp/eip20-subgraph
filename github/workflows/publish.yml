@@ -1,0 +1,49 @@
+name: Publish new version
+run-name: Publish new ${{ inputs.bump }} version from ${{ github.ref_name }} by @${{ github.actor }}
+on:
+  workflow_dispatch:
+    inputs:
+      bump:
+        description: "Positionals"
+        required: true
+        type: choice
+        default: "build"
+        options:
+          - major
+          - minor
+          - patch
+          - build
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}-${{ github.actor }}
+  cancel-in-progress: true
+
+env:
+  GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+jobs:
+  publish-version:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [18.x]
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: "npm"
+      - run: npm install
+      - name: Version
+        id: create-version
+        run: |
+          git config user.name ${{ github.actor }}
+          git config user.email ${{ github.actor }}@users.noreply.github.com
+          if [ ${{ inputs.bump }} == major ]; then BUMP='premajor'; fi
+          if [ ${{ inputs.bump }} == minor ]; then BUMP='preminor'; fi
+          if [ ${{ inputs.bump }} == patch ]; then BUMP='prepatch'; fi
+          if [ ${{ inputs.bump }} == build ]; then BUMP='prerelease'; fi
+          TAG=$(npm version $BUMP --preid build)
+          git push origin
+          git push origin $TAG
