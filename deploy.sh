@@ -38,9 +38,9 @@ fi
 # Generate subgraph.yaml from subgraph-template.yaml
 sed "s/NETWORK_NAME/$NETWORK_NAME/g; s/START_BLOCK/$START_BLOCK/g" $1 subgraph-template.yaml > subgraph.yaml
 
-graph codegen
-graph build
+npm run codegen
+npm run build
 
-graph remove $SUBGRAPH_NAME --node $GRAPH_NODE_URL
-graph create $SUBGRAPH_NAME --node $GRAPH_NODE_URL
-graph deploy $SUBGRAPH_NAME --node $GRAPH_NODE_URL --ipfs $IPFS_URL --version-label $VERSION
+npm run remove -- $SUBGRAPH_NAME --node $GRAPH_NODE_URL
+npm run create -- $SUBGRAPH_NAME --node $GRAPH_NODE_URL
+npm run deploy -- $SUBGRAPH_NAME --node $GRAPH_NODE_URL --ipfs $IPFS_URL --version-label $VERSION
