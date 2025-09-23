@@ -22,4 +22,4 @@ jobs:
       - run: npm run codegen
       - run: npm run build -- --network sepolia
       - run: npm run graph auth ${{ secrets.THE_GRAPH_EIP_20_SEPOLIA_DEPLOY_KEY }}
-      - run: npm run deploy eip-20-sepolia -- --node https://api.studio.thegraph.com/deploy/ --ipfs https://api.thegraph.com/ipfs/ --version-label 1.0.0
+      - run: npm run deploy eip-20-sepolia -- --node https://api.studio.thegraph.com/deploy/ --ipfs https://api.thegraph.com/ipfs/ --version-label ${{ github.ref_name }}
