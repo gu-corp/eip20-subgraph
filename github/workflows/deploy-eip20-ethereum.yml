@@ -1,0 +1,25 @@
+name: Deploy eip20 subgraph for ethereum
+run-name: Deploy eip20 subgraph ${{ github.ref_name }} for ethereum by @${{ github.actor }}
+on:
+  workflow_dispatch:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}-${{ github.actor }}
+  cancel-in-progress: true
+
+jobs:
+  subgraph:
+    name: Subgraph - Deploy
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 22
+          cache: "npm"
+      - run: npm install
+      - run: npm run clean
+      - run: npm run codegen
+      - run: npm run build -- --network mainnet
+      - run: npm run graph auth ${{ secrets.THE_GRAPH_EIP_20_MAINNET_DEPLOY_KEY }}
+      - run: npm run deploy eip-20-mainnet -- --node https://api.studio.thegraph.com/deploy/ --ipfs https://api.thegraph.com/ipfs/ --version-label ${{ github.ref_name }}

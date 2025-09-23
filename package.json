@@ -1,16 +1,17 @@
 {
-  "name": "erc20-subgraph",
-  "version": "0.0.1",
+  "name": "@gu-corp/erc20-subgraph",
+  "version": "1.0.0",
   "description": "Subgraph for indexing all ERC20 token balances and approvals",
   "scripts": {
-    "graph": "graph",
+    "clean": "rimraf build generated",
+    "auth": "graph auth",
     "remove": "graph remove",
     "create": "graph create",
-    "deploy": "graph deploy",
     "codegen": "graph codegen",
-    "build": "graph build"
+    "build": "graph build",
+    "deploy": "graph deploy",
+    "graph": "graph"
   },
-  "author": "George Roman",
   "license": "MIT",
   "dependencies": {
     "@amxx/graphprotocol-utils": "^1.1.0",
@@ -18,6 +19,7 @@
   },
   "devDependencies": {
     "@graphprotocol/graph-cli": "^0.96.0",
-    "@graphprotocol/graph-ts": "^0.38.1"
+    "@graphprotocol/graph-ts": "^0.38.1",
+    "rimraf": "^6.0.1"
   }
 }

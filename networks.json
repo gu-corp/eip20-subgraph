@@ -1,0 +1,22 @@
+{
+  "mainnet": {
+    "EIP20": {
+      "startBlock": 1
+    }
+  },
+  "sepolia": {
+    "EIP20": {
+      "startBlock": 0
+    }
+  },
+  "joc": {
+    "EIP20": {
+      "startBlock": 0
+    }
+  },
+  "joc-testnet": {
+    "EIP20": {
+      "startBlock": 0
+    }
+  }
+}
