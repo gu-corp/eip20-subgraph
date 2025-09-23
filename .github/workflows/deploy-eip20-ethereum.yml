@@ -1,4 +1,4 @@
-name: Deploy eip20 subgraph for ethereum
+name: Deploy eip20 ethereum
 run-name: Deploy eip20 subgraph ${{ github.ref_name }} for ethereum by @${{ github.actor }}
 on:
   workflow_dispatch:

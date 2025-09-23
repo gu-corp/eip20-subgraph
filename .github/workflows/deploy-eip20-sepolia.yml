@@ -1,4 +1,4 @@
-name: Deploy eip20 subgraph for sepolia
+name: Deploy eip20 sepolia
 run-name: Deploy eip20 subgraph ${{ github.ref_name }} for sepolia by @${{ github.actor }}
 on:
   workflow_dispatch:

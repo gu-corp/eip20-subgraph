@@ -1,4 +1,4 @@
-name: Deploy eip20 subgraph for joc testnet
+name: Deploy eip20 joc testnet
 run-name: Deploy eip20 subgraph ${{ github.ref_name }} for joc testnet by @${{ github.actor }}
 on:
   workflow_dispatch:
