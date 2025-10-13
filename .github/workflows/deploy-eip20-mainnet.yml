@@ -1,5 +1,5 @@
-name: Deploy eip20 ethereum
-run-name: Deploy eip20 subgraph ${{ github.ref_name }} for ethereum by @${{ github.actor }}
+name: Deploy eip20 mainnet
+run-name: Deploy eip20 subgraph ${{ github.ref_name }} for mainnet by @${{ github.actor }}
 on:
   workflow_dispatch:
 
@@ -23,4 +23,4 @@ jobs:
       - run: npm run codegen
       - run: npm run build
       - run: npm run graph auth ${{ secrets.THE_GRAPH_EIP_20_MAINNET_DEPLOY_KEY }}
-      - run: npm run deploy eip-20-ethereum -- --node https://api.studio.thegraph.com/deploy/ --ipfs https://api.thegraph.com/ipfs/ --version-label ${{ github.ref_name }}
+      - run: npm run deploy eip-20-mainnet -- --node https://api.studio.thegraph.com/deploy/ --ipfs https://api.thegraph.com/ipfs/ --version-label ${{ github.ref_name }}
