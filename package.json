@@ -10,7 +10,10 @@
     "codegen": "graph codegen",
     "build": "graph build",
     "deploy": "graph deploy",
-    "graph": "graph"
+    "graph": "graph",
+    "gen:subgraph-yaml": "node ./scripts/gen-subgraph-yaml.js",
+    "gen:subgraph-yaml:sepolia": "node ./scripts/gen-subgraph-yaml.js --network sepolia",
+    "gen:subgraph-yaml:mainnet": "node ./scripts/gen-subgraph-yaml.js --network mainnet"
   },
   "license": "MIT",
   "dependencies": {

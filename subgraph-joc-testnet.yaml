@@ -6,7 +6,7 @@ schema:
 templates:
   - kind: ethereum/contract
     name: EIP20
-    network: sepolia
+    network: joc-testnet
     source:
       abi: IERC20
     mapping:
@@ -24,12 +24,12 @@ templates:
       file: ./src/mapping.ts
 dataSources:
   - kind: ethereum/contract
-    name: UNI
-    network: sepolia
+    name: USDTX
+    network: joc-testnet
     source:
-      address: "0x1f9840a85d5aF5bf1D1762F925BDADdC4201F984"
+      address: "0x382eb09D8cE59968683001947EF04cB34f7A180E"
       abi: IERC20
-      startBlock: 1629832
+      startBlock: 9884037
     mapping:
       kind: ethereum/events
       apiVersion: 0.0.6
@@ -44,12 +44,12 @@ dataSources:
           handler: handleTransfer
       file: ./src/mapping.ts
   - kind: ethereum/contract
-    name: WETH
-    network: sepolia
+    name: USDCX
+    network: joc-testnet
     source:
-      address: "0xfFf9976782d46CC05630D1f6eBAb18b2324d6B14"
+      address: "0x367f476c9B5fA1e64F3d7EE19c3E4E2f76D42200"
       abi: IERC20
-      startBlock: 3518216
+      startBlock: 9884036
     mapping:
       kind: ethereum/events
       apiVersion: 0.0.6

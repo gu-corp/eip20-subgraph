@@ -19,7 +19,8 @@ jobs:
           cache: "npm"
       - run: npm install
       - run: npm run clean
+      - run: cp subgraph-mainnet.yaml subgraph.yaml
       - run: npm run codegen
-      - run: npm run build -- --network mainnet
+      - run: npm run build
       - run: npm run graph auth ${{ secrets.THE_GRAPH_EIP_20_MAINNET_DEPLOY_KEY }}
       - run: npm run deploy eip-20-ethereum -- --node https://api.studio.thegraph.com/deploy/ --ipfs https://api.thegraph.com/ipfs/ --version-label ${{ github.ref_name }}
