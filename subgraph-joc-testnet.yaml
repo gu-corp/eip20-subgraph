@@ -3,53 +3,13 @@ description: EIP-20
 repository: https://github.com/gu-corp/eip20-subgraph
 schema:
   file: ./schema.graphql
-templates:
-  - kind: ethereum/contract
-    name: EIP20
-    network: joc-testnet
-    source:
-      abi: IERC20
-    mapping:
-      kind: ethereum/events
-      apiVersion: 0.0.6
-      language: wasm/assemblyscript
-      entities:
-        - ERC20Contract
-      abis:
-        - name: IERC20
-          file: ./node_modules/@openzeppelin/contracts/build/contracts/IERC20Metadata.json
-      eventHandlers:
-        - event: Transfer(indexed address,indexed address,uint256)
-          handler: handleTransfer
-      file: ./src/mapping.ts
 dataSources:
   - kind: ethereum/contract
-    name: USDTX
-    network: joc-testnet
+    name: EIP20
+    network: joc
     source:
-      address: "0x382eb09D8cE59968683001947EF04cB34f7A180E"
       abi: IERC20
-      startBlock: 9884037
-    mapping:
-      kind: ethereum/events
-      apiVersion: 0.0.6
-      language: wasm/assemblyscript
-      entities:
-        - ERC20Contract
-      abis:
-        - name: IERC20
-          file: ./node_modules/@openzeppelin/contracts/build/contracts/IERC20Metadata.json
-      eventHandlers:
-        - event: Transfer(indexed address,indexed address,uint256)
-          handler: handleTransfer
-      file: ./src/mapping.ts
-  - kind: ethereum/contract
-    name: USDCX
-    network: joc-testnet
-    source:
-      address: "0x367f476c9B5fA1e64F3d7EE19c3E4E2f76D42200"
-      abi: IERC20
-      startBlock: 9884036
+      startBlock: 0
     mapping:
       kind: ethereum/events
       apiVersion: 0.0.6
