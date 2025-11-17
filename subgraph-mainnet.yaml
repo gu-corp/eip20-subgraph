@@ -21,7 +21,7 @@ templates:
       eventHandlers:
         - event: Transfer(indexed address,indexed address,uint256)
           handler: handleTransfer
-      file: ./src/mapping.ts
+      file: ./src/mapping-template.ts
 dataSources:
   - kind: ethereum/contract
     name: 0G
@@ -42,7 +42,7 @@ dataSources:
       eventHandlers:
         - event: Transfer(indexed address,indexed address,uint256)
           handler: handleTransfer
-      file: ./src/mapping.ts
+      file: ./src/mapping-template.ts
   - kind: ethereum/contract
     name: 1INCH
     network: mainnet
@@ -62,7 +62,7 @@ dataSources:
       eventHandlers:
         - event: Transfer(indexed address,indexed address,uint256)
           handler: handleTransfer
-      file: ./src/mapping.ts
+      file: ./src/mapping-template.ts
   - kind: ethereum/contract
     name: AAVE
     network: mainnet
@@ -82,7 +82,7 @@ dataSources:
       eventHandlers:
         - event: Transfer(indexed address,indexed address,uint256)
           handler: handleTransfer
-      file: ./src/mapping.ts
+      file: ./src/mapping-template.ts
   - kind: ethereum/contract
     name: AMP
     network: mainnet
@@ -102,7 +102,7 @@ dataSources:
       eventHandlers:
         - event: Transfer(indexed address,indexed address,uint256)
           handler: handleTransfer
-      file: ./src/mapping.ts
+      file: ./src/mapping-template.ts
   - kind: ethereum/contract
     name: APE
     network: mainnet
@@ -122,7 +122,7 @@ dataSources:
       eventHandlers:
         - event: Transfer(indexed address,indexed address,uint256)
           handler: handleTransfer
-      file: ./src/mapping.ts
+      file: ./src/mapping-template.ts
   - kind: ethereum/contract
     name: ATH
     network: mainnet
@@ -142,7 +142,7 @@ dataSources:
       eventHandlers:
         - event: Transfer(indexed address,indexed address,uint256)
           handler: handleTransfer
-      file: ./src/mapping.ts
+      file: ./src/mapping-template.ts
   - kind: ethereum/contract
     name: AXL
     network: mainnet
@@ -162,7 +162,7 @@ dataSources:
       eventHandlers:
         - event: Transfer(indexed address,indexed address,uint256)
           handler: handleTransfer
-      file: ./src/mapping.ts
+      file: ./src/mapping-template.ts
   - kind: ethereum/contract
     name: AXS
     network: mainnet
@@ -182,7 +182,7 @@ dataSources:
       eventHandlers:
         - event: Transfer(indexed address,indexed address,uint256)
           handler: handleTransfer
-      file: ./src/mapping.ts
+      file: ./src/mapping-template.ts
   - kind: ethereum/contract
     name: BAT
     network: mainnet
@@ -202,7 +202,7 @@ dataSources:
       eventHandlers:
         - event: Transfer(indexed address,indexed address,uint256)
           handler: handleTransfer
-      file: ./src/mapping.ts
+      file: ./src/mapping-template.ts
   - kind: ethereum/contract
     name: BEAM
     network: mainnet
@@ -222,7 +222,7 @@ dataSources:
       eventHandlers:
         - event: Transfer(indexed address,indexed address,uint256)
           handler: handleTransfer
-      file: ./src/mapping.ts
+      file: ./src/mapping-template.ts
   - kind: ethereum/contract
     name: BGB
     network: mainnet
@@ -242,7 +242,7 @@ dataSources:
       eventHandlers:
         - event: Transfer(indexed address,indexed address,uint256)
           handler: handleTransfer
-      file: ./src/mapping.ts
+      file: ./src/mapping-template.ts
   - kind: ethereum/contract
     name: BONK
     network: mainnet
@@ -262,7 +262,7 @@ dataSources:
       eventHandlers:
         - event: Transfer(indexed address,indexed address,uint256)
           handler: handleTransfer
-      file: ./src/mapping.ts
+      file: ./src/mapping-template.ts
   - kind: ethereum/contract
     name: BORG
     network: mainnet
@@ -282,7 +282,7 @@ dataSources:
       eventHandlers:
         - event: Transfer(indexed address,indexed address,uint256)
           handler: handleTransfer
-      file: ./src/mapping.ts
+      file: ./src/mapping-template.ts
   - kind: ethereum/contract
     name: CAKE
     network: mainnet
@@ -302,7 +302,7 @@ dataSources:
       eventHandlers:
         - event: Transfer(indexed address,indexed address,uint256)
           handler: handleTransfer
-      file: ./src/mapping.ts
+      file: ./src/mapping-template.ts
   - kind: ethereum/contract
     name: CHZ
     network: mainnet
@@ -322,7 +322,7 @@ dataSources:
       eventHandlers:
         - event: Transfer(indexed address,indexed address,uint256)
           handler: handleTransfer
-      file: ./src/mapping.ts
+      file: ./src/mapping-template.ts
   - kind: ethereum/contract
     name: COMP
     network: mainnet
@@ -342,7 +342,7 @@ dataSources:
       eventHandlers:
         - event: Transfer(indexed address,indexed address,uint256)
           handler: handleTransfer
-      file: ./src/mapping.ts
+      file: ./src/mapping-template.ts
   - kind: ethereum/contract
     name: CRV
     network: mainnet
@@ -362,7 +362,7 @@ dataSources:
       eventHandlers:
         - event: Transfer(indexed address,indexed address,uint256)
           handler: handleTransfer
-      file: ./src/mapping.ts
+      file: ./src/mapping-template.ts
   - kind: ethereum/contract
     name: CVX
     network: mainnet
@@ -382,7 +382,7 @@ dataSources:
       eventHandlers:
         - event: Transfer(indexed address,indexed address,uint256)
           handler: handleTransfer
-      file: ./src/mapping.ts
+      file: ./src/mapping-template.ts
   - kind: ethereum/contract
     name: DAI
     network: mainnet
@@ -402,7 +402,7 @@ dataSources:
       eventHandlers:
         - event: Transfer(indexed address,indexed address,uint256)
           handler: handleTransfer
-      file: ./src/mapping.ts
+      file: ./src/mapping-template.ts
   - kind: ethereum/contract
     name: DEXE
     network: mainnet
@@ -422,7 +422,7 @@ dataSources:
       eventHandlers:
         - event: Transfer(indexed address,indexed address,uint256)
           handler: handleTransfer
-      file: ./src/mapping.ts
+      file: ./src/mapping-template.ts
   - kind: ethereum/contract
     name: EIGEN
     network: mainnet
@@ -442,7 +442,7 @@ dataSources:
       eventHandlers:
         - event: Transfer(indexed address,indexed address,uint256)
           handler: handleTransfer
-      file: ./src/mapping.ts
+      file: ./src/mapping-template.ts
   - kind: ethereum/contract
     name: ENA
     network: mainnet
@@ -462,7 +462,7 @@ dataSources:
       eventHandlers:
         - event: Transfer(indexed address,indexed address,uint256)
           handler: handleTransfer
-      file: ./src/mapping.ts
+      file: ./src/mapping-template.ts
   - kind: ethereum/contract
     name: ENS
     network: mainnet
@@ -482,7 +482,7 @@ dataSources:
       eventHandlers:
         - event: Transfer(indexed address,indexed address,uint256)
           handler: handleTransfer
-      file: ./src/mapping.ts
+      file: ./src/mapping-template.ts
   - kind: ethereum/contract
     name: ETHFI
     network: mainnet
@@ -502,7 +502,7 @@ dataSources:
       eventHandlers:
         - event: Transfer(indexed address,indexed address,uint256)
           handler: handleTransfer
-      file: ./src/mapping.ts
+      file: ./src/mapping-template.ts
   - kind: ethereum/contract
     name: EURC
     network: mainnet
@@ -522,7 +522,7 @@ dataSources:
       eventHandlers:
         - event: Transfer(indexed address,indexed address,uint256)
           handler: handleTransfer
-      file: ./src/mapping.ts
+      file: ./src/mapping-template.ts
   - kind: ethereum/contract
     name: FDUSD
     network: mainnet
@@ -542,7 +542,7 @@ dataSources:
       eventHandlers:
         - event: Transfer(indexed address,indexed address,uint256)
           handler: handleTransfer
-      file: ./src/mapping.ts
+      file: ./src/mapping-template.ts
   - kind: ethereum/contract
     name: FF
     network: mainnet
@@ -562,7 +562,7 @@ dataSources:
       eventHandlers:
         - event: Transfer(indexed address,indexed address,uint256)
           handler: handleTransfer
-      file: ./src/mapping.ts
+      file: ./src/mapping-template.ts
   - kind: ethereum/contract
     name: FLOKI
     network: mainnet
@@ -582,7 +582,7 @@ dataSources:
       eventHandlers:
         - event: Transfer(indexed address,indexed address,uint256)
           handler: handleTransfer
-      file: ./src/mapping.ts
+      file: ./src/mapping-template.ts
   - kind: ethereum/contract
     name: FLUID
     network: mainnet
@@ -602,7 +602,7 @@ dataSources:
       eventHandlers:
         - event: Transfer(indexed address,indexed address,uint256)
           handler: handleTransfer
-      file: ./src/mapping.ts
+      file: ./src/mapping-template.ts
   - kind: ethereum/contract
     name: FRAX
     network: mainnet
@@ -622,7 +622,7 @@ dataSources:
       eventHandlers:
         - event: Transfer(indexed address,indexed address,uint256)
           handler: handleTransfer
-      file: ./src/mapping.ts
+      file: ./src/mapping-template.ts
   - kind: ethereum/contract
     name: GALA
     network: mainnet
@@ -642,7 +642,7 @@ dataSources:
       eventHandlers:
         - event: Transfer(indexed address,indexed address,uint256)
           handler: handleTransfer
-      file: ./src/mapping.ts
+      file: ./src/mapping-template.ts
   - kind: ethereum/contract
     name: GHO
     network: mainnet
@@ -662,7 +662,7 @@ dataSources:
       eventHandlers:
         - event: Transfer(indexed address,indexed address,uint256)
           handler: handleTransfer
-      file: ./src/mapping.ts
+      file: ./src/mapping-template.ts
   - kind: ethereum/contract
     name: GLM
     network: mainnet
@@ -682,7 +682,7 @@ dataSources:
       eventHandlers:
         - event: Transfer(indexed address,indexed address,uint256)
           handler: handleTransfer
-      file: ./src/mapping.ts
+      file: ./src/mapping-template.ts
   - kind: ethereum/contract
     name: GNO
     network: mainnet
@@ -702,7 +702,7 @@ dataSources:
       eventHandlers:
         - event: Transfer(indexed address,indexed address,uint256)
           handler: handleTransfer
-      file: ./src/mapping.ts
+      file: ./src/mapping-template.ts
   - kind: ethereum/contract
     name: GRT
     network: mainnet
@@ -722,7 +722,7 @@ dataSources:
       eventHandlers:
         - event: Transfer(indexed address,indexed address,uint256)
           handler: handleTransfer
-      file: ./src/mapping.ts
+      file: ./src/mapping-template.ts
   - kind: ethereum/contract
     name: GT
     network: mainnet
@@ -742,7 +742,7 @@ dataSources:
       eventHandlers:
         - event: Transfer(indexed address,indexed address,uint256)
           handler: handleTransfer
-      file: ./src/mapping.ts
+      file: ./src/mapping-template.ts
   - kind: ethereum/contract
     name: H
     network: mainnet
@@ -762,7 +762,7 @@ dataSources:
       eventHandlers:
         - event: Transfer(indexed address,indexed address,uint256)
           handler: handleTransfer
-      file: ./src/mapping.ts
+      file: ./src/mapping-template.ts
   - kind: ethereum/contract
     name: IMX
     network: mainnet
@@ -782,7 +782,7 @@ dataSources:
       eventHandlers:
         - event: Transfer(indexed address,indexed address,uint256)
           handler: handleTransfer
-      file: ./src/mapping.ts
+      file: ./src/mapping-template.ts
   - kind: ethereum/contract
     name: INJ
     network: mainnet
@@ -802,7 +802,7 @@ dataSources:
       eventHandlers:
         - event: Transfer(indexed address,indexed address,uint256)
           handler: handleTransfer
-      file: ./src/mapping.ts
+      file: ./src/mapping-template.ts
   - kind: ethereum/contract
     name: JASMY
     network: mainnet
@@ -822,7 +822,7 @@ dataSources:
       eventHandlers:
         - event: Transfer(indexed address,indexed address,uint256)
           handler: handleTransfer
-      file: ./src/mapping.ts
+      file: ./src/mapping-template.ts
   - kind: ethereum/contract
     name: JOCX
     network: mainnet
@@ -842,7 +842,7 @@ dataSources:
       eventHandlers:
         - event: Transfer(indexed address,indexed address,uint256)
           handler: handleTransfer
-      file: ./src/mapping.ts
+      file: ./src/mapping-template.ts
   - kind: ethereum/contract
     name: KAVA
     network: mainnet
@@ -862,7 +862,7 @@ dataSources:
       eventHandlers:
         - event: Transfer(indexed address,indexed address,uint256)
           handler: handleTransfer
-      file: ./src/mapping.ts
+      file: ./src/mapping-template.ts
   - kind: ethereum/contract
     name: KCS
     network: mainnet
@@ -882,7 +882,7 @@ dataSources:
       eventHandlers:
         - event: Transfer(indexed address,indexed address,uint256)
           handler: handleTransfer
-      file: ./src/mapping.ts
+      file: ./src/mapping-template.ts
   - kind: ethereum/contract
     name: LDO
     network: mainnet
@@ -902,7 +902,7 @@ dataSources:
       eventHandlers:
         - event: Transfer(indexed address,indexed address,uint256)
           handler: handleTransfer
-      file: ./src/mapping.ts
+      file: ./src/mapping-template.ts
   - kind: ethereum/contract
     name: LEO
     network: mainnet
@@ -922,7 +922,7 @@ dataSources:
       eventHandlers:
         - event: Transfer(indexed address,indexed address,uint256)
           handler: handleTransfer
-      file: ./src/mapping.ts
+      file: ./src/mapping-template.ts
   - kind: ethereum/contract
     name: LINK
     network: mainnet
@@ -942,7 +942,7 @@ dataSources:
       eventHandlers:
         - event: Transfer(indexed address,indexed address,uint256)
           handler: handleTransfer
-      file: ./src/mapping.ts
+      file: ./src/mapping-template.ts
   - kind: ethereum/contract
     name: LPT
     network: mainnet
@@ -962,7 +962,7 @@ dataSources:
       eventHandlers:
         - event: Transfer(indexed address,indexed address,uint256)
           handler: handleTransfer
-      file: ./src/mapping.ts
+      file: ./src/mapping-template.ts
   - kind: ethereum/contract
     name: MANA
     network: mainnet
@@ -982,7 +982,7 @@ dataSources:
       eventHandlers:
         - event: Transfer(indexed address,indexed address,uint256)
           handler: handleTransfer
-      file: ./src/mapping.ts
+      file: ./src/mapping-template.ts
   - kind: ethereum/contract
     name: MERL
     network: mainnet
@@ -1002,7 +1002,7 @@ dataSources:
       eventHandlers:
         - event: Transfer(indexed address,indexed address,uint256)
           handler: handleTransfer
-      file: ./src/mapping.ts
+      file: ./src/mapping-template.ts
   - kind: ethereum/contract
     name: MNT
     network: mainnet
@@ -1022,7 +1022,7 @@ dataSources:
       eventHandlers:
         - event: Transfer(indexed address,indexed address,uint256)
           handler: handleTransfer
-      file: ./src/mapping.ts
+      file: ./src/mapping-template.ts
   - kind: ethereum/contract
     name: MOCA
     network: mainnet
@@ -1042,7 +1042,7 @@ dataSources:
       eventHandlers:
         - event: Transfer(indexed address,indexed address,uint256)
           handler: handleTransfer
-      file: ./src/mapping.ts
+      file: ./src/mapping-template.ts
   - kind: ethereum/contract
     name: MOG
     network: mainnet
@@ -1062,7 +1062,7 @@ dataSources:
       eventHandlers:
         - event: Transfer(indexed address,indexed address,uint256)
           handler: handleTransfer
-      file: ./src/mapping.ts
+      file: ./src/mapping-template.ts
   - kind: ethereum/contract
     name: MORPHO
     network: mainnet
@@ -1082,7 +1082,7 @@ dataSources:
       eventHandlers:
         - event: Transfer(indexed address,indexed address,uint256)
           handler: handleTransfer
-      file: ./src/mapping.ts
+      file: ./src/mapping-template.ts
   - kind: ethereum/contract
     name: MOVE
     network: mainnet
@@ -1102,7 +1102,7 @@ dataSources:
       eventHandlers:
         - event: Transfer(indexed address,indexed address,uint256)
           handler: handleTransfer
-      file: ./src/mapping.ts
+      file: ./src/mapping-template.ts
   - kind: ethereum/contract
     name: MX
     network: mainnet
@@ -1122,7 +1122,7 @@ dataSources:
       eventHandlers:
         - event: Transfer(indexed address,indexed address,uint256)
           handler: handleTransfer
-      file: ./src/mapping.ts
+      file: ./src/mapping-template.ts
   - kind: ethereum/contract
     name: NEXO
     network: mainnet
@@ -1142,7 +1142,7 @@ dataSources:
       eventHandlers:
         - event: Transfer(indexed address,indexed address,uint256)
           handler: handleTransfer
-      file: ./src/mapping.ts
+      file: ./src/mapping-template.ts
   - kind: ethereum/contract
     name: NFT
     network: mainnet
@@ -1162,7 +1162,7 @@ dataSources:
       eventHandlers:
         - event: Transfer(indexed address,indexed address,uint256)
           handler: handleTransfer
-      file: ./src/mapping.ts
+      file: ./src/mapping-template.ts
   - kind: ethereum/contract
     name: OKB
     network: mainnet
@@ -1182,7 +1182,7 @@ dataSources:
       eventHandlers:
         - event: Transfer(indexed address,indexed address,uint256)
           handler: handleTransfer
-      file: ./src/mapping.ts
+      file: ./src/mapping-template.ts
   - kind: ethereum/contract
     name: ONDO
     network: mainnet
@@ -1202,7 +1202,7 @@ dataSources:
       eventHandlers:
         - event: Transfer(indexed address,indexed address,uint256)
           handler: handleTransfer
-      file: ./src/mapping.ts
+      file: ./src/mapping-template.ts
   - kind: ethereum/contract
     name: PAXG
     network: mainnet
@@ -1222,7 +1222,7 @@ dataSources:
       eventHandlers:
         - event: Transfer(indexed address,indexed address,uint256)
           handler: handleTransfer
-      file: ./src/mapping.ts
+      file: ./src/mapping-template.ts
   - kind: ethereum/contract
     name: PENDLE
     network: mainnet
@@ -1242,7 +1242,7 @@ dataSources:
       eventHandlers:
         - event: Transfer(indexed address,indexed address,uint256)
           handler: handleTransfer
-      file: ./src/mapping.ts
+      file: ./src/mapping-template.ts
   - kind: ethereum/contract
     name: PEPE
     network: mainnet
@@ -1262,7 +1262,7 @@ dataSources:
       eventHandlers:
         - event: Transfer(indexed address,indexed address,uint256)
           handler: handleTransfer
-      file: ./src/mapping.ts
+      file: ./src/mapping-template.ts
   - kind: ethereum/contract
     name: PLUME
     network: mainnet
@@ -1282,7 +1282,7 @@ dataSources:
       eventHandlers:
         - event: Transfer(indexed address,indexed address,uint256)
           handler: handleTransfer
-      file: ./src/mapping.ts
+      file: ./src/mapping-template.ts
   - kind: ethereum/contract
     name: POL
     network: mainnet
@@ -1302,7 +1302,7 @@ dataSources:
       eventHandlers:
         - event: Transfer(indexed address,indexed address,uint256)
           handler: handleTransfer
-      file: ./src/mapping.ts
+      file: ./src/mapping-template.ts
   - kind: ethereum/contract
     name: PROM
     network: mainnet
@@ -1322,7 +1322,7 @@ dataSources:
       eventHandlers:
         - event: Transfer(indexed address,indexed address,uint256)
           handler: handleTransfer
-      file: ./src/mapping.ts
+      file: ./src/mapping-template.ts
   - kind: ethereum/contract
     name: PYUSD
     network: mainnet
@@ -1342,7 +1342,7 @@ dataSources:
       eventHandlers:
         - event: Transfer(indexed address,indexed address,uint256)
           handler: handleTransfer
-      file: ./src/mapping.ts
+      file: ./src/mapping-template.ts
   - kind: ethereum/contract
     name: QNT
     network: mainnet
@@ -1362,7 +1362,7 @@ dataSources:
       eventHandlers:
         - event: Transfer(indexed address,indexed address,uint256)
           handler: handleTransfer
-      file: ./src/mapping.ts
+      file: ./src/mapping-template.ts
   - kind: ethereum/contract
     name: RENDER
     network: mainnet
@@ -1382,7 +1382,7 @@ dataSources:
       eventHandlers:
         - event: Transfer(indexed address,indexed address,uint256)
           handler: handleTransfer
-      file: ./src/mapping.ts
+      file: ./src/mapping-template.ts
   - kind: ethereum/contract
     name: RSR
     network: mainnet
@@ -1402,7 +1402,7 @@ dataSources:
       eventHandlers:
         - event: Transfer(indexed address,indexed address,uint256)
           handler: handleTransfer
-      file: ./src/mapping.ts
+      file: ./src/mapping-template.ts
   - kind: ethereum/contract
     name: SAFE
     network: mainnet
@@ -1422,7 +1422,7 @@ dataSources:
       eventHandlers:
         - event: Transfer(indexed address,indexed address,uint256)
           handler: handleTransfer
-      file: ./src/mapping.ts
+      file: ./src/mapping-template.ts
   - kind: ethereum/contract
     name: SAND
     network: mainnet
@@ -1442,7 +1442,7 @@ dataSources:
       eventHandlers:
         - event: Transfer(indexed address,indexed address,uint256)
           handler: handleTransfer
-      file: ./src/mapping.ts
+      file: ./src/mapping-template.ts
   - kind: ethereum/contract
     name: SHIB
     network: mainnet
@@ -1462,7 +1462,7 @@ dataSources:
       eventHandlers:
         - event: Transfer(indexed address,indexed address,uint256)
           handler: handleTransfer
-      file: ./src/mapping.ts
+      file: ./src/mapping-template.ts
   - kind: ethereum/contract
     name: SKY
     network: mainnet
@@ -1482,7 +1482,7 @@ dataSources:
       eventHandlers:
         - event: Transfer(indexed address,indexed address,uint256)
           handler: handleTransfer
-      file: ./src/mapping.ts
+      file: ./src/mapping-template.ts
   - kind: ethereum/contract
     name: SNX
     network: mainnet
@@ -1502,7 +1502,7 @@ dataSources:
       eventHandlers:
         - event: Transfer(indexed address,indexed address,uint256)
           handler: handleTransfer
-      file: ./src/mapping.ts
+      file: ./src/mapping-template.ts
   - kind: ethereum/contract
     name: SPX
     network: mainnet
@@ -1522,7 +1522,7 @@ dataSources:
       eventHandlers:
         - event: Transfer(indexed address,indexed address,uint256)
           handler: handleTransfer
-      file: ./src/mapping.ts
+      file: ./src/mapping-template.ts
   - kind: ethereum/contract
     name: STRK
     network: mainnet
@@ -1542,7 +1542,7 @@ dataSources:
       eventHandlers:
         - event: Transfer(indexed address,indexed address,uint256)
           handler: handleTransfer
-      file: ./src/mapping.ts
+      file: ./src/mapping-template.ts
   - kind: ethereum/contract
     name: SUPER
     network: mainnet
@@ -1562,7 +1562,7 @@ dataSources:
       eventHandlers:
         - event: Transfer(indexed address,indexed address,uint256)
           handler: handleTransfer
-      file: ./src/mapping.ts
+      file: ./src/mapping-template.ts
   - kind: ethereum/contract
     name: SYRUP
     network: mainnet
@@ -1582,7 +1582,7 @@ dataSources:
       eventHandlers:
         - event: Transfer(indexed address,indexed address,uint256)
           handler: handleTransfer
-      file: ./src/mapping.ts
+      file: ./src/mapping-template.ts
   - kind: ethereum/contract
     name: TEL
     network: mainnet
@@ -1602,7 +1602,7 @@ dataSources:
       eventHandlers:
         - event: Transfer(indexed address,indexed address,uint256)
           handler: handleTransfer
-      file: ./src/mapping.ts
+      file: ./src/mapping-template.ts
   - kind: ethereum/contract
     name: TRAC
     network: mainnet
@@ -1622,7 +1622,7 @@ dataSources:
       eventHandlers:
         - event: Transfer(indexed address,indexed address,uint256)
           handler: handleTransfer
-      file: ./src/mapping.ts
+      file: ./src/mapping-template.ts
   - kind: ethereum/contract
     name: TURBO
     network: mainnet
@@ -1642,7 +1642,7 @@ dataSources:
       eventHandlers:
         - event: Transfer(indexed address,indexed address,uint256)
           handler: handleTransfer
-      file: ./src/mapping.ts
+      file: ./src/mapping-template.ts
   - kind: ethereum/contract
     name: TUSD
     network: mainnet
@@ -1662,7 +1662,7 @@ dataSources:
       eventHandlers:
         - event: Transfer(indexed address,indexed address,uint256)
           handler: handleTransfer
-      file: ./src/mapping.ts
+      file: ./src/mapping-template.ts
   - kind: ethereum/contract
     name: UNI
     network: mainnet
@@ -1682,7 +1682,7 @@ dataSources:
       eventHandlers:
         - event: Transfer(indexed address,indexed address,uint256)
           handler: handleTransfer
-      file: ./src/mapping.ts
+      file: ./src/mapping-template.ts
   - kind: ethereum/contract
     name: USD0
     network: mainnet
@@ -1702,7 +1702,7 @@ dataSources:
       eventHandlers:
         - event: Transfer(indexed address,indexed address,uint256)
           handler: handleTransfer
-      file: ./src/mapping.ts
+      file: ./src/mapping-template.ts
   - kind: ethereum/contract
     name: USD1
     network: mainnet
@@ -1722,7 +1722,7 @@ dataSources:
       eventHandlers:
         - event: Transfer(indexed address,indexed address,uint256)
           handler: handleTransfer
-      file: ./src/mapping.ts
+      file: ./src/mapping-template.ts
   - kind: ethereum/contract
     name: USDC
     network: mainnet
@@ -1742,7 +1742,7 @@ dataSources:
       eventHandlers:
         - event: Transfer(indexed address,indexed address,uint256)
           handler: handleTransfer
-      file: ./src/mapping.ts
+      file: ./src/mapping-template.ts
   - kind: ethereum/contract
     name: USDCX
     network: mainnet
@@ -1762,7 +1762,7 @@ dataSources:
       eventHandlers:
         - event: Transfer(indexed address,indexed address,uint256)
           handler: handleTransfer
-      file: ./src/mapping.ts
+      file: ./src/mapping-template.ts
   - kind: ethereum/contract
     name: USDe
     network: mainnet
@@ -1782,7 +1782,7 @@ dataSources:
       eventHandlers:
         - event: Transfer(indexed address,indexed address,uint256)
           handler: handleTransfer
-      file: ./src/mapping.ts
+      file: ./src/mapping-template.ts
   - kind: ethereum/contract
     name: USDf
     network: mainnet
@@ -1802,7 +1802,7 @@ dataSources:
       eventHandlers:
         - event: Transfer(indexed address,indexed address,uint256)
           handler: handleTransfer
-      file: ./src/mapping.ts
+      file: ./src/mapping-template.ts
   - kind: ethereum/contract
     name: USDG
     network: mainnet
@@ -1822,7 +1822,7 @@ dataSources:
       eventHandlers:
         - event: Transfer(indexed address,indexed address,uint256)
           handler: handleTransfer
-      file: ./src/mapping.ts
+      file: ./src/mapping-template.ts
   - kind: ethereum/contract
     name: USDT
     network: mainnet
@@ -1842,7 +1842,7 @@ dataSources:
       eventHandlers:
         - event: Transfer(indexed address,indexed address,uint256)
           handler: handleTransfer
-      file: ./src/mapping.ts
+      file: ./src/mapping-template.ts
   - kind: ethereum/contract
     name: USDTX
     network: mainnet
@@ -1862,7 +1862,7 @@ dataSources:
       eventHandlers:
         - event: Transfer(indexed address,indexed address,uint256)
           handler: handleTransfer
-      file: ./src/mapping.ts
+      file: ./src/mapping-template.ts
   - kind: ethereum/contract
     name: USDY
     network: mainnet
@@ -1882,7 +1882,7 @@ dataSources:
       eventHandlers:
         - event: Transfer(indexed address,indexed address,uint256)
           handler: handleTransfer
-      file: ./src/mapping.ts
+      file: ./src/mapping-template.ts
   - kind: ethereum/contract
     name: VIRTUAL
     network: mainnet
@@ -1902,7 +1902,7 @@ dataSources:
       eventHandlers:
         - event: Transfer(indexed address,indexed address,uint256)
           handler: handleTransfer
-      file: ./src/mapping.ts
+      file: ./src/mapping-template.ts
   - kind: ethereum/contract
     name: VSN
     network: mainnet
@@ -1922,7 +1922,7 @@ dataSources:
       eventHandlers:
         - event: Transfer(indexed address,indexed address,uint256)
           handler: handleTransfer
-      file: ./src/mapping.ts
+      file: ./src/mapping-template.ts
   - kind: ethereum/contract
     name: W
     network: mainnet
@@ -1942,7 +1942,7 @@ dataSources:
       eventHandlers:
         - event: Transfer(indexed address,indexed address,uint256)
           handler: handleTransfer
-      file: ./src/mapping.ts
+      file: ./src/mapping-template.ts
   - kind: ethereum/contract
     name: WLD
     network: mainnet
@@ -1962,7 +1962,7 @@ dataSources:
       eventHandlers:
         - event: Transfer(indexed address,indexed address,uint256)
           handler: handleTransfer
-      file: ./src/mapping.ts
+      file: ./src/mapping-template.ts
   - kind: ethereum/contract
     name: WLFI
     network: mainnet
@@ -1982,7 +1982,7 @@ dataSources:
       eventHandlers:
         - event: Transfer(indexed address,indexed address,uint256)
           handler: handleTransfer
-      file: ./src/mapping.ts
+      file: ./src/mapping-template.ts
   - kind: ethereum/contract
     name: XAUt
     network: mainnet
@@ -2002,7 +2002,7 @@ dataSources:
       eventHandlers:
         - event: Transfer(indexed address,indexed address,uint256)
           handler: handleTransfer
-      file: ./src/mapping.ts
+      file: ./src/mapping-template.ts
   - kind: ethereum/contract
     name: XCN
     network: mainnet
@@ -2022,7 +2022,7 @@ dataSources:
       eventHandlers:
         - event: Transfer(indexed address,indexed address,uint256)
           handler: handleTransfer
-      file: ./src/mapping.ts
+      file: ./src/mapping-template.ts
   - kind: ethereum/contract
     name: ZBU
     network: mainnet
@@ -2042,7 +2042,7 @@ dataSources:
       eventHandlers:
         - event: Transfer(indexed address,indexed address,uint256)
           handler: handleTransfer
-      file: ./src/mapping.ts
+      file: ./src/mapping-template.ts
   - kind: ethereum/contract
     name: ZRO
     network: mainnet
@@ -2062,7 +2062,7 @@ dataSources:
       eventHandlers:
         - event: Transfer(indexed address,indexed address,uint256)
           handler: handleTransfer
-      file: ./src/mapping.ts
+      file: ./src/mapping-template.ts
   - kind: ethereum/contract
     name: ZRX
     network: mainnet
@@ -2082,4 +2082,4 @@ dataSources:
       eventHandlers:
         - event: Transfer(indexed address,indexed address,uint256)
           handler: handleTransfer
-      file: ./src/mapping.ts
+      file: ./src/mapping-template.ts

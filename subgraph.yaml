@@ -3,13 +3,12 @@ description: EIP-20
 repository: https://github.com/gu-corp/eip20-subgraph
 schema:
   file: ./schema.graphql
-dataSources:
+templates:
   - kind: ethereum/contract
     name: EIP20
-    network: joc
+    network: mainnet
     source:
       abi: IERC20
-      startBlock: 0
     mapping:
       kind: ethereum/events
       apiVersion: 0.0.6
@@ -22,4 +21,2065 @@ dataSources:
       eventHandlers:
         - event: Transfer(indexed address,indexed address,uint256)
           handler: handleTransfer
-      file: ./src/mapping.ts
+      file: ./src/mapping-template.ts
+dataSources:
+  - kind: ethereum/contract
+    name: 0G
+    network: mainnet
+    source:
+      address: "0x4B948d64dE1F71fCd12fB586f4c776421a35b3eE"
+      abi: IERC20
+      startBlock: 23400722
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.6
+      language: wasm/assemblyscript
+      entities:
+        - ERC20Contract
+      abis:
+        - name: IERC20
+          file: ./node_modules/@openzeppelin/contracts/build/contracts/IERC20Metadata.json
+      eventHandlers:
+        - event: Transfer(indexed address,indexed address,uint256)
+          handler: handleTransfer
+      file: ./src/mapping-template.ts
+  - kind: ethereum/contract
+    name: 1INCH
+    network: mainnet
+    source:
+      address: "0x111111111117dc0aa78b770fa6a738034120c302"
+      abi: IERC20
+      startBlock: 11511393
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.6
+      language: wasm/assemblyscript
+      entities:
+        - ERC20Contract
+      abis:
+        - name: IERC20
+          file: ./node_modules/@openzeppelin/contracts/build/contracts/IERC20Metadata.json
+      eventHandlers:
+        - event: Transfer(indexed address,indexed address,uint256)
+          handler: handleTransfer
+      file: ./src/mapping-template.ts
+  - kind: ethereum/contract
+    name: AAVE
+    network: mainnet
+    source:
+      address: "0x7Fc66500c84A76Ad7e9c93437bFc5Ac33E2DDaE9"
+      abi: IERC20
+      startBlock: 10926829
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.6
+      language: wasm/assemblyscript
+      entities:
+        - ERC20Contract
+      abis:
+        - name: IERC20
+          file: ./node_modules/@openzeppelin/contracts/build/contracts/IERC20Metadata.json
+      eventHandlers:
+        - event: Transfer(indexed address,indexed address,uint256)
+          handler: handleTransfer
+      file: ./src/mapping-template.ts
+  - kind: ethereum/contract
+    name: AMP
+    network: mainnet
+    source:
+      address: "0xff20817765cb7f73d4bde2e66e067e58d11095c2"
+      abi: IERC20
+      startBlock: 10635417
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.6
+      language: wasm/assemblyscript
+      entities:
+        - ERC20Contract
+      abis:
+        - name: IERC20
+          file: ./node_modules/@openzeppelin/contracts/build/contracts/IERC20Metadata.json
+      eventHandlers:
+        - event: Transfer(indexed address,indexed address,uint256)
+          handler: handleTransfer
+      file: ./src/mapping-template.ts
+  - kind: ethereum/contract
+    name: APE
+    network: mainnet
+    source:
+      address: "0x4d224452801aced8b2f0aebe155379bb5d594381"
+      abi: IERC20
+      startBlock: 14204533
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.6
+      language: wasm/assemblyscript
+      entities:
+        - ERC20Contract
+      abis:
+        - name: IERC20
+          file: ./node_modules/@openzeppelin/contracts/build/contracts/IERC20Metadata.json
+      eventHandlers:
+        - event: Transfer(indexed address,indexed address,uint256)
+          handler: handleTransfer
+      file: ./src/mapping-template.ts
+  - kind: ethereum/contract
+    name: ATH
+    network: mainnet
+    source:
+      address: "0xbe0ed4138121ecfc5c0e56b40517da27e6c5226b"
+      abi: IERC20
+      startBlock: 20023984
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.6
+      language: wasm/assemblyscript
+      entities:
+        - ERC20Contract
+      abis:
+        - name: IERC20
+          file: ./node_modules/@openzeppelin/contracts/build/contracts/IERC20Metadata.json
+      eventHandlers:
+        - event: Transfer(indexed address,indexed address,uint256)
+          handler: handleTransfer
+      file: ./src/mapping-template.ts
+  - kind: ethereum/contract
+    name: AXL
+    network: mainnet
+    source:
+      address: "0x467719aD09025FcC6cF6F8311755809d45a5E5f3"
+      abi: IERC20
+      startBlock: 15435518
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.6
+      language: wasm/assemblyscript
+      entities:
+        - ERC20Contract
+      abis:
+        - name: IERC20
+          file: ./node_modules/@openzeppelin/contracts/build/contracts/IERC20Metadata.json
+      eventHandlers:
+        - event: Transfer(indexed address,indexed address,uint256)
+          handler: handleTransfer
+      file: ./src/mapping-template.ts
+  - kind: ethereum/contract
+    name: AXS
+    network: mainnet
+    source:
+      address: "0xbb0e17ef65f82ab018d8edd776e8dd940327b28b"
+      abi: IERC20
+      startBlock: 12314534
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.6
+      language: wasm/assemblyscript
+      entities:
+        - ERC20Contract
+      abis:
+        - name: IERC20
+          file: ./node_modules/@openzeppelin/contracts/build/contracts/IERC20Metadata.json
+      eventHandlers:
+        - event: Transfer(indexed address,indexed address,uint256)
+          handler: handleTransfer
+      file: ./src/mapping-template.ts
+  - kind: ethereum/contract
+    name: BAT
+    network: mainnet
+    source:
+      address: "0x0d8775f648430679a709e98d2b0cb6250d2887ef"
+      abi: IERC20
+      startBlock: 3788558
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.6
+      language: wasm/assemblyscript
+      entities:
+        - ERC20Contract
+      abis:
+        - name: IERC20
+          file: ./node_modules/@openzeppelin/contracts/build/contracts/IERC20Metadata.json
+      eventHandlers:
+        - event: Transfer(indexed address,indexed address,uint256)
+          handler: handleTransfer
+      file: ./src/mapping-template.ts
+  - kind: ethereum/contract
+    name: BEAM
+    network: mainnet
+    source:
+      address: "0x62D0A8458eD7719FDAF978fe5929C6D342B0bFcE"
+      abi: IERC20
+      startBlock: 18363515
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.6
+      language: wasm/assemblyscript
+      entities:
+        - ERC20Contract
+      abis:
+        - name: IERC20
+          file: ./node_modules/@openzeppelin/contracts/build/contracts/IERC20Metadata.json
+      eventHandlers:
+        - event: Transfer(indexed address,indexed address,uint256)
+          handler: handleTransfer
+      file: ./src/mapping-template.ts
+  - kind: ethereum/contract
+    name: BGB
+    network: mainnet
+    source:
+      address: "0x54D2252757e1672EEaD234D27B1270728fF90581"
+      abi: IERC20
+      startBlock: 20166853
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.6
+      language: wasm/assemblyscript
+      entities:
+        - ERC20Contract
+      abis:
+        - name: IERC20
+          file: ./node_modules/@openzeppelin/contracts/build/contracts/IERC20Metadata.json
+      eventHandlers:
+        - event: Transfer(indexed address,indexed address,uint256)
+          handler: handleTransfer
+      file: ./src/mapping-template.ts
+  - kind: ethereum/contract
+    name: BONK
+    network: mainnet
+    source:
+      address: "0x1151CB3d861920e07a38e03eEAd12C32178567F6"
+      abi: IERC20
+      startBlock: 16628718
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.6
+      language: wasm/assemblyscript
+      entities:
+        - ERC20Contract
+      abis:
+        - name: IERC20
+          file: ./node_modules/@openzeppelin/contracts/build/contracts/IERC20Metadata.json
+      eventHandlers:
+        - event: Transfer(indexed address,indexed address,uint256)
+          handler: handleTransfer
+      file: ./src/mapping-template.ts
+  - kind: ethereum/contract
+    name: BORG
+    network: mainnet
+    source:
+      address: "0x64d0f55cd8c7133a9d7102b13987235f486f2224"
+      abi: IERC20
+      startBlock: 17975659
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.6
+      language: wasm/assemblyscript
+      entities:
+        - ERC20Contract
+      abis:
+        - name: IERC20
+          file: ./node_modules/@openzeppelin/contracts/build/contracts/IERC20Metadata.json
+      eventHandlers:
+        - event: Transfer(indexed address,indexed address,uint256)
+          handler: handleTransfer
+      file: ./src/mapping-template.ts
+  - kind: ethereum/contract
+    name: CAKE
+    network: mainnet
+    source:
+      address: "0x152649eA73beAb28c5b49B26eb48f7EAD6d4c898"
+      abi: IERC20
+      startBlock: 16924137
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.6
+      language: wasm/assemblyscript
+      entities:
+        - ERC20Contract
+      abis:
+        - name: IERC20
+          file: ./node_modules/@openzeppelin/contracts/build/contracts/IERC20Metadata.json
+      eventHandlers:
+        - event: Transfer(indexed address,indexed address,uint256)
+          handler: handleTransfer
+      file: ./src/mapping-template.ts
+  - kind: ethereum/contract
+    name: CHZ
+    network: mainnet
+    source:
+      address: "0x3506424f91fd33084466f402d5d97f05f8e3b4af"
+      abi: IERC20
+      startBlock: 6585593
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.6
+      language: wasm/assemblyscript
+      entities:
+        - ERC20Contract
+      abis:
+        - name: IERC20
+          file: ./node_modules/@openzeppelin/contracts/build/contracts/IERC20Metadata.json
+      eventHandlers:
+        - event: Transfer(indexed address,indexed address,uint256)
+          handler: handleTransfer
+      file: ./src/mapping-template.ts
+  - kind: ethereum/contract
+    name: COMP
+    network: mainnet
+    source:
+      address: "0xc00e94cb662c3520282e6f5717214004a7f26888"
+      abi: IERC20
+      startBlock: 9601359
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.6
+      language: wasm/assemblyscript
+      entities:
+        - ERC20Contract
+      abis:
+        - name: IERC20
+          file: ./node_modules/@openzeppelin/contracts/build/contracts/IERC20Metadata.json
+      eventHandlers:
+        - event: Transfer(indexed address,indexed address,uint256)
+          handler: handleTransfer
+      file: ./src/mapping-template.ts
+  - kind: ethereum/contract
+    name: CRV
+    network: mainnet
+    source:
+      address: "0xD533a949740bb3306d119CC777fa900bA034cd52"
+      abi: IERC20
+      startBlock: 10647806
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.6
+      language: wasm/assemblyscript
+      entities:
+        - ERC20Contract
+      abis:
+        - name: IERC20
+          file: ./node_modules/@openzeppelin/contracts/build/contracts/IERC20Metadata.json
+      eventHandlers:
+        - event: Transfer(indexed address,indexed address,uint256)
+          handler: handleTransfer
+      file: ./src/mapping-template.ts
+  - kind: ethereum/contract
+    name: CVX
+    network: mainnet
+    source:
+      address: "0x4e3fbd56cd56c3e72c1403e103b45db9da5b9d2b"
+      abi: IERC20
+      startBlock: 12450988
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.6
+      language: wasm/assemblyscript
+      entities:
+        - ERC20Contract
+      abis:
+        - name: IERC20
+          file: ./node_modules/@openzeppelin/contracts/build/contracts/IERC20Metadata.json
+      eventHandlers:
+        - event: Transfer(indexed address,indexed address,uint256)
+          handler: handleTransfer
+      file: ./src/mapping-template.ts
+  - kind: ethereum/contract
+    name: DAI
+    network: mainnet
+    source:
+      address: "0x6b175474e89094c44da98b954eedeac495271d0f"
+      abi: IERC20
+      startBlock: 8928158
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.6
+      language: wasm/assemblyscript
+      entities:
+        - ERC20Contract
+      abis:
+        - name: IERC20
+          file: ./node_modules/@openzeppelin/contracts/build/contracts/IERC20Metadata.json
+      eventHandlers:
+        - event: Transfer(indexed address,indexed address,uint256)
+          handler: handleTransfer
+      file: ./src/mapping-template.ts
+  - kind: ethereum/contract
+    name: DEXE
+    network: mainnet
+    source:
+      address: "0xde4EE8057785A7e8e800Db58F9784845A5C2Cbd6"
+      abi: IERC20
+      startBlock: 10951421
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.6
+      language: wasm/assemblyscript
+      entities:
+        - ERC20Contract
+      abis:
+        - name: IERC20
+          file: ./node_modules/@openzeppelin/contracts/build/contracts/IERC20Metadata.json
+      eventHandlers:
+        - event: Transfer(indexed address,indexed address,uint256)
+          handler: handleTransfer
+      file: ./src/mapping-template.ts
+  - kind: ethereum/contract
+    name: EIGEN
+    network: mainnet
+    source:
+      address: "0xec53bF9167f50cDEB3Ae105f56099aaaB9061F83"
+      abi: IERC20
+      startBlock: 18366276
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.6
+      language: wasm/assemblyscript
+      entities:
+        - ERC20Contract
+      abis:
+        - name: IERC20
+          file: ./node_modules/@openzeppelin/contracts/build/contracts/IERC20Metadata.json
+      eventHandlers:
+        - event: Transfer(indexed address,indexed address,uint256)
+          handler: handleTransfer
+      file: ./src/mapping-template.ts
+  - kind: ethereum/contract
+    name: ENA
+    network: mainnet
+    source:
+      address: "0x57e114B691Db790C35207b2e685D4A43181e6061"
+      abi: IERC20
+      startBlock: 19371662
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.6
+      language: wasm/assemblyscript
+      entities:
+        - ERC20Contract
+      abis:
+        - name: IERC20
+          file: ./node_modules/@openzeppelin/contracts/build/contracts/IERC20Metadata.json
+      eventHandlers:
+        - event: Transfer(indexed address,indexed address,uint256)
+          handler: handleTransfer
+      file: ./src/mapping-template.ts
+  - kind: ethereum/contract
+    name: ENS
+    network: mainnet
+    source:
+      address: "0xC18360217D8F7Ab5e7c516566761Ea12Ce7F9D72"
+      abi: IERC20
+      startBlock: 13533418
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.6
+      language: wasm/assemblyscript
+      entities:
+        - ERC20Contract
+      abis:
+        - name: IERC20
+          file: ./node_modules/@openzeppelin/contracts/build/contracts/IERC20Metadata.json
+      eventHandlers:
+        - event: Transfer(indexed address,indexed address,uint256)
+          handler: handleTransfer
+      file: ./src/mapping-template.ts
+  - kind: ethereum/contract
+    name: ETHFI
+    network: mainnet
+    source:
+      address: "0xFe0c30065B384F05761f15d0CC899D4F9F9Cc0eB"
+      abi: IERC20
+      startBlock: 19288125
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.6
+      language: wasm/assemblyscript
+      entities:
+        - ERC20Contract
+      abis:
+        - name: IERC20
+          file: ./node_modules/@openzeppelin/contracts/build/contracts/IERC20Metadata.json
+      eventHandlers:
+        - event: Transfer(indexed address,indexed address,uint256)
+          handler: handleTransfer
+      file: ./src/mapping-template.ts
+  - kind: ethereum/contract
+    name: EURC
+    network: mainnet
+    source:
+      address: "0x1abaea1f7c830bd89acc67ec4af516284b1bc33c"
+      abi: IERC20
+      startBlock: 14807227
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.6
+      language: wasm/assemblyscript
+      entities:
+        - ERC20Contract
+      abis:
+        - name: IERC20
+          file: ./node_modules/@openzeppelin/contracts/build/contracts/IERC20Metadata.json
+      eventHandlers:
+        - event: Transfer(indexed address,indexed address,uint256)
+          handler: handleTransfer
+      file: ./src/mapping-template.ts
+  - kind: ethereum/contract
+    name: FDUSD
+    network: mainnet
+    source:
+      address: "0xc5f0f7b66764F6ec8C8Dff7BA683102295E16409"
+      abi: IERC20
+      startBlock: 17144262
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.6
+      language: wasm/assemblyscript
+      entities:
+        - ERC20Contract
+      abis:
+        - name: IERC20
+          file: ./node_modules/@openzeppelin/contracts/build/contracts/IERC20Metadata.json
+      eventHandlers:
+        - event: Transfer(indexed address,indexed address,uint256)
+          handler: handleTransfer
+      file: ./src/mapping-template.ts
+  - kind: ethereum/contract
+    name: FF
+    network: mainnet
+    source:
+      address: "0xfa1c09fc8b491b6a4d3ff53a10cad29381b3f949"
+      abi: IERC20
+      startBlock: 23398852
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.6
+      language: wasm/assemblyscript
+      entities:
+        - ERC20Contract
+      abis:
+        - name: IERC20
+          file: ./node_modules/@openzeppelin/contracts/build/contracts/IERC20Metadata.json
+      eventHandlers:
+        - event: Transfer(indexed address,indexed address,uint256)
+          handler: handleTransfer
+      file: ./src/mapping-template.ts
+  - kind: ethereum/contract
+    name: FLOKI
+    network: mainnet
+    source:
+      address: "0xcf0c122c6b73ff809c693db761e7baebe62b6a2e"
+      abi: IERC20
+      startBlock: 14029867
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.6
+      language: wasm/assemblyscript
+      entities:
+        - ERC20Contract
+      abis:
+        - name: IERC20
+          file: ./node_modules/@openzeppelin/contracts/build/contracts/IERC20Metadata.json
+      eventHandlers:
+        - event: Transfer(indexed address,indexed address,uint256)
+          handler: handleTransfer
+      file: ./src/mapping-template.ts
+  - kind: ethereum/contract
+    name: FLUID
+    network: mainnet
+    source:
+      address: "0x6f40d4A6237C257fff2dB00FA0510DeEECd303eb"
+      abi: IERC20
+      startBlock: 12183236
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.6
+      language: wasm/assemblyscript
+      entities:
+        - ERC20Contract
+      abis:
+        - name: IERC20
+          file: ./node_modules/@openzeppelin/contracts/build/contracts/IERC20Metadata.json
+      eventHandlers:
+        - event: Transfer(indexed address,indexed address,uint256)
+          handler: handleTransfer
+      file: ./src/mapping-template.ts
+  - kind: ethereum/contract
+    name: FRAX
+    network: mainnet
+    source:
+      address: "0x853d955acef822db058eb8505911ed77f175b99e"
+      abi: IERC20
+      startBlock: 11465581
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.6
+      language: wasm/assemblyscript
+      entities:
+        - ERC20Contract
+      abis:
+        - name: IERC20
+          file: ./node_modules/@openzeppelin/contracts/build/contracts/IERC20Metadata.json
+      eventHandlers:
+        - event: Transfer(indexed address,indexed address,uint256)
+          handler: handleTransfer
+      file: ./src/mapping-template.ts
+  - kind: ethereum/contract
+    name: GALA
+    network: mainnet
+    source:
+      address: "0xd1d2Eb1B1e90B638588728b4130137D262C87cae"
+      abi: IERC20
+      startBlock: 17081359
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.6
+      language: wasm/assemblyscript
+      entities:
+        - ERC20Contract
+      abis:
+        - name: IERC20
+          file: ./node_modules/@openzeppelin/contracts/build/contracts/IERC20Metadata.json
+      eventHandlers:
+        - event: Transfer(indexed address,indexed address,uint256)
+          handler: handleTransfer
+      file: ./src/mapping-template.ts
+  - kind: ethereum/contract
+    name: GHO
+    network: mainnet
+    source:
+      address: "0x40D16FC0246aD3160Ccc09B8D0D3A2cD28aE6C2f"
+      abi: IERC20
+      startBlock: 17698470
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.6
+      language: wasm/assemblyscript
+      entities:
+        - ERC20Contract
+      abis:
+        - name: IERC20
+          file: ./node_modules/@openzeppelin/contracts/build/contracts/IERC20Metadata.json
+      eventHandlers:
+        - event: Transfer(indexed address,indexed address,uint256)
+          handler: handleTransfer
+      file: ./src/mapping-template.ts
+  - kind: ethereum/contract
+    name: GLM
+    network: mainnet
+    source:
+      address: "0x7DD9c5Cba05E151C895FDe1CF355C9A1D5DA6429"
+      abi: IERC20
+      startBlock: 11281056
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.6
+      language: wasm/assemblyscript
+      entities:
+        - ERC20Contract
+      abis:
+        - name: IERC20
+          file: ./node_modules/@openzeppelin/contracts/build/contracts/IERC20Metadata.json
+      eventHandlers:
+        - event: Transfer(indexed address,indexed address,uint256)
+          handler: handleTransfer
+      file: ./src/mapping-template.ts
+  - kind: ethereum/contract
+    name: GNO
+    network: mainnet
+    source:
+      address: "0x6810e776880c02933d47db1b9fc05908e5386b96"
+      abi: IERC20
+      startBlock: 3557596
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.6
+      language: wasm/assemblyscript
+      entities:
+        - ERC20Contract
+      abis:
+        - name: IERC20
+          file: ./node_modules/@openzeppelin/contracts/build/contracts/IERC20Metadata.json
+      eventHandlers:
+        - event: Transfer(indexed address,indexed address,uint256)
+          handler: handleTransfer
+      file: ./src/mapping-template.ts
+  - kind: ethereum/contract
+    name: GRT
+    network: mainnet
+    source:
+      address: "0xc944e90c64b2c07662a292be6244bdf05cda44a7"
+      abi: IERC20
+      startBlock: 11446769
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.6
+      language: wasm/assemblyscript
+      entities:
+        - ERC20Contract
+      abis:
+        - name: IERC20
+          file: ./node_modules/@openzeppelin/contracts/build/contracts/IERC20Metadata.json
+      eventHandlers:
+        - event: Transfer(indexed address,indexed address,uint256)
+          handler: handleTransfer
+      file: ./src/mapping-template.ts
+  - kind: ethereum/contract
+    name: GT
+    network: mainnet
+    source:
+      address: "0xe66747a101bff2dba3697199dcce5b743b454759"
+      abi: IERC20
+      startBlock: 7726894
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.6
+      language: wasm/assemblyscript
+      entities:
+        - ERC20Contract
+      abis:
+        - name: IERC20
+          file: ./node_modules/@openzeppelin/contracts/build/contracts/IERC20Metadata.json
+      eventHandlers:
+        - event: Transfer(indexed address,indexed address,uint256)
+          handler: handleTransfer
+      file: ./src/mapping-template.ts
+  - kind: ethereum/contract
+    name: H
+    network: mainnet
+    source:
+      address: "0xcf5104D094e3864CfCBDa43B82e1cEFD26A016eB"
+      abi: IERC20
+      startBlock: 22687560
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.6
+      language: wasm/assemblyscript
+      entities:
+        - ERC20Contract
+      abis:
+        - name: IERC20
+          file: ./node_modules/@openzeppelin/contracts/build/contracts/IERC20Metadata.json
+      eventHandlers:
+        - event: Transfer(indexed address,indexed address,uint256)
+          handler: handleTransfer
+      file: ./src/mapping-template.ts
+  - kind: ethereum/contract
+    name: IMX
+    network: mainnet
+    source:
+      address: "0xf57e7e7c23978c3caec3c3548e3d615c346e79ff"
+      abi: IERC20
+      startBlock: 13415141
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.6
+      language: wasm/assemblyscript
+      entities:
+        - ERC20Contract
+      abis:
+        - name: IERC20
+          file: ./node_modules/@openzeppelin/contracts/build/contracts/IERC20Metadata.json
+      eventHandlers:
+        - event: Transfer(indexed address,indexed address,uint256)
+          handler: handleTransfer
+      file: ./src/mapping-template.ts
+  - kind: ethereum/contract
+    name: INJ
+    network: mainnet
+    source:
+      address: "0xe28b3b32b6c345a34ff64674606124dd5aceca30"
+      abi: IERC20
+      startBlock: 11072329
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.6
+      language: wasm/assemblyscript
+      entities:
+        - ERC20Contract
+      abis:
+        - name: IERC20
+          file: ./node_modules/@openzeppelin/contracts/build/contracts/IERC20Metadata.json
+      eventHandlers:
+        - event: Transfer(indexed address,indexed address,uint256)
+          handler: handleTransfer
+      file: ./src/mapping-template.ts
+  - kind: ethereum/contract
+    name: JASMY
+    network: mainnet
+    source:
+      address: "0x7420B4b9a0110cdC71fB720908340C03F9Bc03EC"
+      abi: IERC20
+      startBlock: 9164378
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.6
+      language: wasm/assemblyscript
+      entities:
+        - ERC20Contract
+      abis:
+        - name: IERC20
+          file: ./node_modules/@openzeppelin/contracts/build/contracts/IERC20Metadata.json
+      eventHandlers:
+        - event: Transfer(indexed address,indexed address,uint256)
+          handler: handleTransfer
+      file: ./src/mapping-template.ts
+  - kind: ethereum/contract
+    name: JOCX
+    network: mainnet
+    source:
+      address: "0xbb1E1399EEE1f577F1B4359224155f5Db39CA084"
+      abi: IERC20
+      startBlock: 22537314
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.6
+      language: wasm/assemblyscript
+      entities:
+        - ERC20Contract
+      abis:
+        - name: IERC20
+          file: ./node_modules/@openzeppelin/contracts/build/contracts/IERC20Metadata.json
+      eventHandlers:
+        - event: Transfer(indexed address,indexed address,uint256)
+          handler: handleTransfer
+      file: ./src/mapping-template.ts
+  - kind: ethereum/contract
+    name: KAVA
+    network: mainnet
+    source:
+      address: "0x0C356B7fD36a5357E5A017EF11887ba100C9AB76"
+      abi: IERC20
+      startBlock: 13155076
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.6
+      language: wasm/assemblyscript
+      entities:
+        - ERC20Contract
+      abis:
+        - name: IERC20
+          file: ./node_modules/@openzeppelin/contracts/build/contracts/IERC20Metadata.json
+      eventHandlers:
+        - event: Transfer(indexed address,indexed address,uint256)
+          handler: handleTransfer
+      file: ./src/mapping-template.ts
+  - kind: ethereum/contract
+    name: KCS
+    network: mainnet
+    source:
+      address: "0xf34960d9d60be18cc1d5afc1a6f012a723a28811"
+      abi: IERC20
+      startBlock: 11638804
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.6
+      language: wasm/assemblyscript
+      entities:
+        - ERC20Contract
+      abis:
+        - name: IERC20
+          file: ./node_modules/@openzeppelin/contracts/build/contracts/IERC20Metadata.json
+      eventHandlers:
+        - event: Transfer(indexed address,indexed address,uint256)
+          handler: handleTransfer
+      file: ./src/mapping-template.ts
+  - kind: ethereum/contract
+    name: LDO
+    network: mainnet
+    source:
+      address: "0x5a98fcbea516cf06857215779fd812ca3bef1b32"
+      abi: IERC20
+      startBlock: 11473216
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.6
+      language: wasm/assemblyscript
+      entities:
+        - ERC20Contract
+      abis:
+        - name: IERC20
+          file: ./node_modules/@openzeppelin/contracts/build/contracts/IERC20Metadata.json
+      eventHandlers:
+        - event: Transfer(indexed address,indexed address,uint256)
+          handler: handleTransfer
+      file: ./src/mapping-template.ts
+  - kind: ethereum/contract
+    name: LEO
+    network: mainnet
+    source:
+      address: "0x2af5d2ad76741191d15dfe7bf6ac92d4bd912ca3"
+      abi: IERC20
+      startBlock: 7803477
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.6
+      language: wasm/assemblyscript
+      entities:
+        - ERC20Contract
+      abis:
+        - name: IERC20
+          file: ./node_modules/@openzeppelin/contracts/build/contracts/IERC20Metadata.json
+      eventHandlers:
+        - event: Transfer(indexed address,indexed address,uint256)
+          handler: handleTransfer
+      file: ./src/mapping-template.ts
+  - kind: ethereum/contract
+    name: LINK
+    network: mainnet
+    source:
+      address: "0x514910771af9ca656af840dff83e8264ecf986ca"
+      abi: IERC20
+      startBlock: 4281611
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.6
+      language: wasm/assemblyscript
+      entities:
+        - ERC20Contract
+      abis:
+        - name: IERC20
+          file: ./node_modules/@openzeppelin/contracts/build/contracts/IERC20Metadata.json
+      eventHandlers:
+        - event: Transfer(indexed address,indexed address,uint256)
+          handler: handleTransfer
+      file: ./src/mapping-template.ts
+  - kind: ethereum/contract
+    name: LPT
+    network: mainnet
+    source:
+      address: "0x58b6a8a3302369daec383334672404ee733ab239"
+      abi: IERC20
+      startBlock: 5533907
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.6
+      language: wasm/assemblyscript
+      entities:
+        - ERC20Contract
+      abis:
+        - name: IERC20
+          file: ./node_modules/@openzeppelin/contracts/build/contracts/IERC20Metadata.json
+      eventHandlers:
+        - event: Transfer(indexed address,indexed address,uint256)
+          handler: handleTransfer
+      file: ./src/mapping-template.ts
+  - kind: ethereum/contract
+    name: MANA
+    network: mainnet
+    source:
+      address: "0x0f5d2fb29fb7d3cfee444a200298f468908cc942"
+      abi: IERC20
+      startBlock: 4162059
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.6
+      language: wasm/assemblyscript
+      entities:
+        - ERC20Contract
+      abis:
+        - name: IERC20
+          file: ./node_modules/@openzeppelin/contracts/build/contracts/IERC20Metadata.json
+      eventHandlers:
+        - event: Transfer(indexed address,indexed address,uint256)
+          handler: handleTransfer
+      file: ./src/mapping-template.ts
+  - kind: ethereum/contract
+    name: MERL
+    network: mainnet
+    source:
+      address: "0xa0c56a8c0692bD10B3fA8f8bA79Cf5332B7107F9"
+      abi: IERC20
+      startBlock: 22652720
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.6
+      language: wasm/assemblyscript
+      entities:
+        - ERC20Contract
+      abis:
+        - name: IERC20
+          file: ./node_modules/@openzeppelin/contracts/build/contracts/IERC20Metadata.json
+      eventHandlers:
+        - event: Transfer(indexed address,indexed address,uint256)
+          handler: handleTransfer
+      file: ./src/mapping-template.ts
+  - kind: ethereum/contract
+    name: MNT
+    network: mainnet
+    source:
+      address: "0x3c3a81e81dc49a522a592e7622a7e711c06bf354"
+      abi: IERC20
+      startBlock: 17519070
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.6
+      language: wasm/assemblyscript
+      entities:
+        - ERC20Contract
+      abis:
+        - name: IERC20
+          file: ./node_modules/@openzeppelin/contracts/build/contracts/IERC20Metadata.json
+      eventHandlers:
+        - event: Transfer(indexed address,indexed address,uint256)
+          handler: handleTransfer
+      file: ./src/mapping-template.ts
+  - kind: ethereum/contract
+    name: MOCA
+    network: mainnet
+    source:
+      address: "0xf944e35f95e819e752f3ccb5faf40957d311e8c5"
+      abi: IERC20
+      startBlock: 19729887
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.6
+      language: wasm/assemblyscript
+      entities:
+        - ERC20Contract
+      abis:
+        - name: IERC20
+          file: ./node_modules/@openzeppelin/contracts/build/contracts/IERC20Metadata.json
+      eventHandlers:
+        - event: Transfer(indexed address,indexed address,uint256)
+          handler: handleTransfer
+      file: ./src/mapping-template.ts
+  - kind: ethereum/contract
+    name: MOG
+    network: mainnet
+    source:
+      address: "0xaaeE1A9723aaDB7afA2810263653A34bA2C21C7a"
+      abi: IERC20
+      startBlock: 17731591
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.6
+      language: wasm/assemblyscript
+      entities:
+        - ERC20Contract
+      abis:
+        - name: IERC20
+          file: ./node_modules/@openzeppelin/contracts/build/contracts/IERC20Metadata.json
+      eventHandlers:
+        - event: Transfer(indexed address,indexed address,uint256)
+          handler: handleTransfer
+      file: ./src/mapping-template.ts
+  - kind: ethereum/contract
+    name: MORPHO
+    network: mainnet
+    source:
+      address: "0x58D97B57BB95320F9a05dC918Aef65434969c2B2"
+      abi: IERC20
+      startBlock: 21157386
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.6
+      language: wasm/assemblyscript
+      entities:
+        - ERC20Contract
+      abis:
+        - name: IERC20
+          file: ./node_modules/@openzeppelin/contracts/build/contracts/IERC20Metadata.json
+      eventHandlers:
+        - event: Transfer(indexed address,indexed address,uint256)
+          handler: handleTransfer
+      file: ./src/mapping-template.ts
+  - kind: ethereum/contract
+    name: MOVE
+    network: mainnet
+    source:
+      address: "0x3073f7aAA4DB83f95e9FFf17424F71D4751a3073"
+      abi: IERC20
+      startBlock: 20843299
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.6
+      language: wasm/assemblyscript
+      entities:
+        - ERC20Contract
+      abis:
+        - name: IERC20
+          file: ./node_modules/@openzeppelin/contracts/build/contracts/IERC20Metadata.json
+      eventHandlers:
+        - event: Transfer(indexed address,indexed address,uint256)
+          handler: handleTransfer
+      file: ./src/mapping-template.ts
+  - kind: ethereum/contract
+    name: MX
+    network: mainnet
+    source:
+      address: "0x11eef04c884e24d9b7b4760e7476d06ddf797f36"
+      abi: IERC20
+      startBlock: 5828860
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.6
+      language: wasm/assemblyscript
+      entities:
+        - ERC20Contract
+      abis:
+        - name: IERC20
+          file: ./node_modules/@openzeppelin/contracts/build/contracts/IERC20Metadata.json
+      eventHandlers:
+        - event: Transfer(indexed address,indexed address,uint256)
+          handler: handleTransfer
+      file: ./src/mapping-template.ts
+  - kind: ethereum/contract
+    name: NEXO
+    network: mainnet
+    source:
+      address: "0xb62132e35a6c13ee1ee0f84dc5d40bad8d815206"
+      abi: IERC20
+      startBlock: 5475683
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.6
+      language: wasm/assemblyscript
+      entities:
+        - ERC20Contract
+      abis:
+        - name: IERC20
+          file: ./node_modules/@openzeppelin/contracts/build/contracts/IERC20Metadata.json
+      eventHandlers:
+        - event: Transfer(indexed address,indexed address,uint256)
+          handler: handleTransfer
+      file: ./src/mapping-template.ts
+  - kind: ethereum/contract
+    name: NFT
+    network: mainnet
+    source:
+      address: "0x198d14f2ad9ce69e76ea330b374de4957c3f850a"
+      abi: IERC20
+      startBlock: 14203741
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.6
+      language: wasm/assemblyscript
+      entities:
+        - ERC20Contract
+      abis:
+        - name: IERC20
+          file: ./node_modules/@openzeppelin/contracts/build/contracts/IERC20Metadata.json
+      eventHandlers:
+        - event: Transfer(indexed address,indexed address,uint256)
+          handler: handleTransfer
+      file: ./src/mapping-template.ts
+  - kind: ethereum/contract
+    name: OKB
+    network: mainnet
+    source:
+      address: "0x75231f58b43240c9718dd58b4967c5114342a86c"
+      abi: IERC20
+      startBlock: 7641712
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.6
+      language: wasm/assemblyscript
+      entities:
+        - ERC20Contract
+      abis:
+        - name: IERC20
+          file: ./node_modules/@openzeppelin/contracts/build/contracts/IERC20Metadata.json
+      eventHandlers:
+        - event: Transfer(indexed address,indexed address,uint256)
+          handler: handleTransfer
+      file: ./src/mapping-template.ts
+  - kind: ethereum/contract
+    name: ONDO
+    network: mainnet
+    source:
+      address: "0xfaba6f8e4a5e8ab82f62fe7c39859fa577269be3"
+      abi: IERC20
+      startBlock: 14670968
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.6
+      language: wasm/assemblyscript
+      entities:
+        - ERC20Contract
+      abis:
+        - name: IERC20
+          file: ./node_modules/@openzeppelin/contracts/build/contracts/IERC20Metadata.json
+      eventHandlers:
+        - event: Transfer(indexed address,indexed address,uint256)
+          handler: handleTransfer
+      file: ./src/mapping-template.ts
+  - kind: ethereum/contract
+    name: PAXG
+    network: mainnet
+    source:
+      address: "0x45804880de22913dafe09f4980848ece6ecbaf78"
+      abi: IERC20
+      startBlock: 8426430
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.6
+      language: wasm/assemblyscript
+      entities:
+        - ERC20Contract
+      abis:
+        - name: IERC20
+          file: ./node_modules/@openzeppelin/contracts/build/contracts/IERC20Metadata.json
+      eventHandlers:
+        - event: Transfer(indexed address,indexed address,uint256)
+          handler: handleTransfer
+      file: ./src/mapping-template.ts
+  - kind: ethereum/contract
+    name: PENDLE
+    network: mainnet
+    source:
+      address: "0x808507121b80c02388fad14726482e061b8da827"
+      abi: IERC20
+      startBlock: 12320098
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.6
+      language: wasm/assemblyscript
+      entities:
+        - ERC20Contract
+      abis:
+        - name: IERC20
+          file: ./node_modules/@openzeppelin/contracts/build/contracts/IERC20Metadata.json
+      eventHandlers:
+        - event: Transfer(indexed address,indexed address,uint256)
+          handler: handleTransfer
+      file: ./src/mapping-template.ts
+  - kind: ethereum/contract
+    name: PEPE
+    network: mainnet
+    source:
+      address: "0x6982508145454ce325ddbe47a25d4ec3d2311933"
+      abi: IERC20
+      startBlock: 17046105
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.6
+      language: wasm/assemblyscript
+      entities:
+        - ERC20Contract
+      abis:
+        - name: IERC20
+          file: ./node_modules/@openzeppelin/contracts/build/contracts/IERC20Metadata.json
+      eventHandlers:
+        - event: Transfer(indexed address,indexed address,uint256)
+          handler: handleTransfer
+      file: ./src/mapping-template.ts
+  - kind: ethereum/contract
+    name: PLUME
+    network: mainnet
+    source:
+      address: "0x4C1746A800D224393fE2470C70A35717eD4eA5F1"
+      abi: IERC20
+      startBlock: 20477690
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.6
+      language: wasm/assemblyscript
+      entities:
+        - ERC20Contract
+      abis:
+        - name: IERC20
+          file: ./node_modules/@openzeppelin/contracts/build/contracts/IERC20Metadata.json
+      eventHandlers:
+        - event: Transfer(indexed address,indexed address,uint256)
+          handler: handleTransfer
+      file: ./src/mapping-template.ts
+  - kind: ethereum/contract
+    name: POL
+    network: mainnet
+    source:
+      address: "0x455e53cbb86018ac2b8092fdcd39d8444affc3f6"
+      abi: IERC20
+      startBlock: 18426253
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.6
+      language: wasm/assemblyscript
+      entities:
+        - ERC20Contract
+      abis:
+        - name: IERC20
+          file: ./node_modules/@openzeppelin/contracts/build/contracts/IERC20Metadata.json
+      eventHandlers:
+        - event: Transfer(indexed address,indexed address,uint256)
+          handler: handleTransfer
+      file: ./src/mapping-template.ts
+  - kind: ethereum/contract
+    name: PROM
+    network: mainnet
+    source:
+      address: "0xfc82bb4ba86045af6f327323a46e80412b91b27d"
+      abi: IERC20
+      startBlock: 7789253
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.6
+      language: wasm/assemblyscript
+      entities:
+        - ERC20Contract
+      abis:
+        - name: IERC20
+          file: ./node_modules/@openzeppelin/contracts/build/contracts/IERC20Metadata.json
+      eventHandlers:
+        - event: Transfer(indexed address,indexed address,uint256)
+          handler: handleTransfer
+      file: ./src/mapping-template.ts
+  - kind: ethereum/contract
+    name: PYUSD
+    network: mainnet
+    source:
+      address: "0x6c3ea9036406852006290770bedfcaba0e23a0e8"
+      abi: IERC20
+      startBlock: 15921958
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.6
+      language: wasm/assemblyscript
+      entities:
+        - ERC20Contract
+      abis:
+        - name: IERC20
+          file: ./node_modules/@openzeppelin/contracts/build/contracts/IERC20Metadata.json
+      eventHandlers:
+        - event: Transfer(indexed address,indexed address,uint256)
+          handler: handleTransfer
+      file: ./src/mapping-template.ts
+  - kind: ethereum/contract
+    name: QNT
+    network: mainnet
+    source:
+      address: "0x4a220e6096b25eadb88358cb44068a3248254675"
+      abi: IERC20
+      startBlock: 5392950
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.6
+      language: wasm/assemblyscript
+      entities:
+        - ERC20Contract
+      abis:
+        - name: IERC20
+          file: ./node_modules/@openzeppelin/contracts/build/contracts/IERC20Metadata.json
+      eventHandlers:
+        - event: Transfer(indexed address,indexed address,uint256)
+          handler: handleTransfer
+      file: ./src/mapping-template.ts
+  - kind: ethereum/contract
+    name: RENDER
+    network: mainnet
+    source:
+      address: "0x6de037ef9ad2725eb40118bb1702ebb27e4aeb24"
+      abi: IERC20
+      startBlock: 7208992
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.6
+      language: wasm/assemblyscript
+      entities:
+        - ERC20Contract
+      abis:
+        - name: IERC20
+          file: ./node_modules/@openzeppelin/contracts/build/contracts/IERC20Metadata.json
+      eventHandlers:
+        - event: Transfer(indexed address,indexed address,uint256)
+          handler: handleTransfer
+      file: ./src/mapping-template.ts
+  - kind: ethereum/contract
+    name: RSR
+    network: mainnet
+    source:
+      address: "0x320623b8e4ff03373931769a31fc52a4e78b5d70"
+      abi: IERC20
+      startBlock: 13947046
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.6
+      language: wasm/assemblyscript
+      entities:
+        - ERC20Contract
+      abis:
+        - name: IERC20
+          file: ./node_modules/@openzeppelin/contracts/build/contracts/IERC20Metadata.json
+      eventHandlers:
+        - event: Transfer(indexed address,indexed address,uint256)
+          handler: handleTransfer
+      file: ./src/mapping-template.ts
+  - kind: ethereum/contract
+    name: SAFE
+    network: mainnet
+    source:
+      address: "0x5afe3855358e112b5647b952709e6165e1c1eeee"
+      abi: IERC20
+      startBlock: 14624496
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.6
+      language: wasm/assemblyscript
+      entities:
+        - ERC20Contract
+      abis:
+        - name: IERC20
+          file: ./node_modules/@openzeppelin/contracts/build/contracts/IERC20Metadata.json
+      eventHandlers:
+        - event: Transfer(indexed address,indexed address,uint256)
+          handler: handleTransfer
+      file: ./src/mapping-template.ts
+  - kind: ethereum/contract
+    name: SAND
+    network: mainnet
+    source:
+      address: "0x3845badAde8e6dFF049820680d1F14bD3903a5d0"
+      abi: IERC20
+      startBlock: 8835135
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.6
+      language: wasm/assemblyscript
+      entities:
+        - ERC20Contract
+      abis:
+        - name: IERC20
+          file: ./node_modules/@openzeppelin/contracts/build/contracts/IERC20Metadata.json
+      eventHandlers:
+        - event: Transfer(indexed address,indexed address,uint256)
+          handler: handleTransfer
+      file: ./src/mapping-template.ts
+  - kind: ethereum/contract
+    name: SHIB
+    network: mainnet
+    source:
+      address: "0x95ad61b0a150d79219dcf64e1e6cc01f0b64c4ce"
+      abi: IERC20
+      startBlock: 10569013
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.6
+      language: wasm/assemblyscript
+      entities:
+        - ERC20Contract
+      abis:
+        - name: IERC20
+          file: ./node_modules/@openzeppelin/contracts/build/contracts/IERC20Metadata.json
+      eventHandlers:
+        - event: Transfer(indexed address,indexed address,uint256)
+          handler: handleTransfer
+      file: ./src/mapping-template.ts
+  - kind: ethereum/contract
+    name: SKY
+    network: mainnet
+    source:
+      address: "0x56072C95FAA701256059aa122697B133aDEd9279"
+      abi: IERC20
+      startBlock: 20663735
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.6
+      language: wasm/assemblyscript
+      entities:
+        - ERC20Contract
+      abis:
+        - name: IERC20
+          file: ./node_modules/@openzeppelin/contracts/build/contracts/IERC20Metadata.json
+      eventHandlers:
+        - event: Transfer(indexed address,indexed address,uint256)
+          handler: handleTransfer
+      file: ./src/mapping-template.ts
+  - kind: ethereum/contract
+    name: SNX
+    network: mainnet
+    source:
+      address: "0xc011a73ee8576fb46f5e1c5751ca3b9fe0af2a6f"
+      abi: IERC20
+      startBlock: 8314597
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.6
+      language: wasm/assemblyscript
+      entities:
+        - ERC20Contract
+      abis:
+        - name: IERC20
+          file: ./node_modules/@openzeppelin/contracts/build/contracts/IERC20Metadata.json
+      eventHandlers:
+        - event: Transfer(indexed address,indexed address,uint256)
+          handler: handleTransfer
+      file: ./src/mapping-template.ts
+  - kind: ethereum/contract
+    name: SPX
+    network: mainnet
+    source:
+      address: "0xe0f63a424a4439cbe457d80e4f4b51ad25b2c56c"
+      abi: IERC20
+      startBlock: 17924486
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.6
+      language: wasm/assemblyscript
+      entities:
+        - ERC20Contract
+      abis:
+        - name: IERC20
+          file: ./node_modules/@openzeppelin/contracts/build/contracts/IERC20Metadata.json
+      eventHandlers:
+        - event: Transfer(indexed address,indexed address,uint256)
+          handler: handleTransfer
+      file: ./src/mapping-template.ts
+  - kind: ethereum/contract
+    name: STRK
+    network: mainnet
+    source:
+      address: "0xCa14007Eff0dB1f8135f4C25B34De49AB0d42766"
+      abi: IERC20
+      startBlock: 15983290
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.6
+      language: wasm/assemblyscript
+      entities:
+        - ERC20Contract
+      abis:
+        - name: IERC20
+          file: ./node_modules/@openzeppelin/contracts/build/contracts/IERC20Metadata.json
+      eventHandlers:
+        - event: Transfer(indexed address,indexed address,uint256)
+          handler: handleTransfer
+      file: ./src/mapping-template.ts
+  - kind: ethereum/contract
+    name: SUPER
+    network: mainnet
+    source:
+      address: "0xe53ec727dbdeb9e2d5456c3be40cff031ab40a55"
+      abi: IERC20
+      startBlock: 11897052
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.6
+      language: wasm/assemblyscript
+      entities:
+        - ERC20Contract
+      abis:
+        - name: IERC20
+          file: ./node_modules/@openzeppelin/contracts/build/contracts/IERC20Metadata.json
+      eventHandlers:
+        - event: Transfer(indexed address,indexed address,uint256)
+          handler: handleTransfer
+      file: ./src/mapping-template.ts
+  - kind: ethereum/contract
+    name: SYRUP
+    network: mainnet
+    source:
+      address: "0x643C4E15d7d62Ad0aBeC4a9BD4b001aA3Ef52d66"
+      abi: IERC20
+      startBlock: 20735383
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.6
+      language: wasm/assemblyscript
+      entities:
+        - ERC20Contract
+      abis:
+        - name: IERC20
+          file: ./node_modules/@openzeppelin/contracts/build/contracts/IERC20Metadata.json
+      eventHandlers:
+        - event: Transfer(indexed address,indexed address,uint256)
+          handler: handleTransfer
+      file: ./src/mapping-template.ts
+  - kind: ethereum/contract
+    name: TEL
+    network: mainnet
+    source:
+      address: "0x467bccd9d29f223bce8043b84e8c8b282827790f"
+      abi: IERC20
+      startBlock: 9369177
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.6
+      language: wasm/assemblyscript
+      entities:
+        - ERC20Contract
+      abis:
+        - name: IERC20
+          file: ./node_modules/@openzeppelin/contracts/build/contracts/IERC20Metadata.json
+      eventHandlers:
+        - event: Transfer(indexed address,indexed address,uint256)
+          handler: handleTransfer
+      file: ./src/mapping-template.ts
+  - kind: ethereum/contract
+    name: TRAC
+    network: mainnet
+    source:
+      address: "0xaa7a9ca87d3694b5755f213b5d04094b8d0f0a6f"
+      abi: IERC20
+      startBlock: 4961540
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.6
+      language: wasm/assemblyscript
+      entities:
+        - ERC20Contract
+      abis:
+        - name: IERC20
+          file: ./node_modules/@openzeppelin/contracts/build/contracts/IERC20Metadata.json
+      eventHandlers:
+        - event: Transfer(indexed address,indexed address,uint256)
+          handler: handleTransfer
+      file: ./src/mapping-template.ts
+  - kind: ethereum/contract
+    name: TURBO
+    network: mainnet
+    source:
+      address: "0xa35923162c49cf95e6bf26623385eb431ad920d3"
+      abi: IERC20
+      startBlock: 17149228
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.6
+      language: wasm/assemblyscript
+      entities:
+        - ERC20Contract
+      abis:
+        - name: IERC20
+          file: ./node_modules/@openzeppelin/contracts/build/contracts/IERC20Metadata.json
+      eventHandlers:
+        - event: Transfer(indexed address,indexed address,uint256)
+          handler: handleTransfer
+      file: ./src/mapping-template.ts
+  - kind: ethereum/contract
+    name: TUSD
+    network: mainnet
+    source:
+      address: "0x0000000000085d4780B73119b644AE5ecd22b376"
+      abi: IERC20
+      startBlock: 6988184
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.6
+      language: wasm/assemblyscript
+      entities:
+        - ERC20Contract
+      abis:
+        - name: IERC20
+          file: ./node_modules/@openzeppelin/contracts/build/contracts/IERC20Metadata.json
+      eventHandlers:
+        - event: Transfer(indexed address,indexed address,uint256)
+          handler: handleTransfer
+      file: ./src/mapping-template.ts
+  - kind: ethereum/contract
+    name: UNI
+    network: mainnet
+    source:
+      address: "0x1f9840a85d5af5bf1d1762f925bdaddc4201f984"
+      abi: IERC20
+      startBlock: 10861674
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.6
+      language: wasm/assemblyscript
+      entities:
+        - ERC20Contract
+      abis:
+        - name: IERC20
+          file: ./node_modules/@openzeppelin/contracts/build/contracts/IERC20Metadata.json
+      eventHandlers:
+        - event: Transfer(indexed address,indexed address,uint256)
+          handler: handleTransfer
+      file: ./src/mapping-template.ts
+  - kind: ethereum/contract
+    name: USD0
+    network: mainnet
+    source:
+      address: "0x73a15fed60bf67631dc6cd7bc5b6e8da8190acf5"
+      abi: IERC20
+      startBlock: 19932960
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.6
+      language: wasm/assemblyscript
+      entities:
+        - ERC20Contract
+      abis:
+        - name: IERC20
+          file: ./node_modules/@openzeppelin/contracts/build/contracts/IERC20Metadata.json
+      eventHandlers:
+        - event: Transfer(indexed address,indexed address,uint256)
+          handler: handleTransfer
+      file: ./src/mapping-template.ts
+  - kind: ethereum/contract
+    name: USD1
+    network: mainnet
+    source:
+      address: "0x8d0D000Ee44948FC98c9B98A4FA4921476f08B0d"
+      abi: IERC20
+      startBlock: 21720503
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.6
+      language: wasm/assemblyscript
+      entities:
+        - ERC20Contract
+      abis:
+        - name: IERC20
+          file: ./node_modules/@openzeppelin/contracts/build/contracts/IERC20Metadata.json
+      eventHandlers:
+        - event: Transfer(indexed address,indexed address,uint256)
+          handler: handleTransfer
+      file: ./src/mapping-template.ts
+  - kind: ethereum/contract
+    name: USDC
+    network: mainnet
+    source:
+      address: "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48"
+      abi: IERC20
+      startBlock: 6082465
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.6
+      language: wasm/assemblyscript
+      entities:
+        - ERC20Contract
+      abis:
+        - name: IERC20
+          file: ./node_modules/@openzeppelin/contracts/build/contracts/IERC20Metadata.json
+      eventHandlers:
+        - event: Transfer(indexed address,indexed address,uint256)
+          handler: handleTransfer
+      file: ./src/mapping-template.ts
+  - kind: ethereum/contract
+    name: USDCX
+    network: mainnet
+    source:
+      address: "0x5E80CAf3D631Ada4F71B915717766257fC8c684a"
+      abi: IERC20
+      startBlock: 21971727
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.6
+      language: wasm/assemblyscript
+      entities:
+        - ERC20Contract
+      abis:
+        - name: IERC20
+          file: ./node_modules/@openzeppelin/contracts/build/contracts/IERC20Metadata.json
+      eventHandlers:
+        - event: Transfer(indexed address,indexed address,uint256)
+          handler: handleTransfer
+      file: ./src/mapping-template.ts
+  - kind: ethereum/contract
+    name: USDe
+    network: mainnet
+    source:
+      address: "0x4c9edd5852cd905f086c759e8383e09bff1e68b3"
+      abi: IERC20
+      startBlock: 18571358
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.6
+      language: wasm/assemblyscript
+      entities:
+        - ERC20Contract
+      abis:
+        - name: IERC20
+          file: ./node_modules/@openzeppelin/contracts/build/contracts/IERC20Metadata.json
+      eventHandlers:
+        - event: Transfer(indexed address,indexed address,uint256)
+          handler: handleTransfer
+      file: ./src/mapping-template.ts
+  - kind: ethereum/contract
+    name: USDf
+    network: mainnet
+    source:
+      address: "0xFa2B947eEc368f42195f24F36d2aF29f7c24CeC2"
+      abi: IERC20
+      startBlock: 21818184
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.6
+      language: wasm/assemblyscript
+      entities:
+        - ERC20Contract
+      abis:
+        - name: IERC20
+          file: ./node_modules/@openzeppelin/contracts/build/contracts/IERC20Metadata.json
+      eventHandlers:
+        - event: Transfer(indexed address,indexed address,uint256)
+          handler: handleTransfer
+      file: ./src/mapping-template.ts
+  - kind: ethereum/contract
+    name: USDG
+    network: mainnet
+    source:
+      address: "0xe343167631d89B6Ffc58B88d6b7fB0228795491D"
+      abi: IERC20
+      startBlock: 20915336
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.6
+      language: wasm/assemblyscript
+      entities:
+        - ERC20Contract
+      abis:
+        - name: IERC20
+          file: ./node_modules/@openzeppelin/contracts/build/contracts/IERC20Metadata.json
+      eventHandlers:
+        - event: Transfer(indexed address,indexed address,uint256)
+          handler: handleTransfer
+      file: ./src/mapping-template.ts
+  - kind: ethereum/contract
+    name: USDT
+    network: mainnet
+    source:
+      address: "0xdac17f958d2ee523a2206206994597c13d831ec7"
+      abi: IERC20
+      startBlock: 4634748
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.6
+      language: wasm/assemblyscript
+      entities:
+        - ERC20Contract
+      abis:
+        - name: IERC20
+          file: ./node_modules/@openzeppelin/contracts/build/contracts/IERC20Metadata.json
+      eventHandlers:
+        - event: Transfer(indexed address,indexed address,uint256)
+          handler: handleTransfer
+      file: ./src/mapping-template.ts
+  - kind: ethereum/contract
+    name: USDTX
+    network: mainnet
+    source:
+      address: "0x4ba87863374eD6D5e2d3A2aa6A2B036C1603180C"
+      abi: IERC20
+      startBlock: 21971728
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.6
+      language: wasm/assemblyscript
+      entities:
+        - ERC20Contract
+      abis:
+        - name: IERC20
+          file: ./node_modules/@openzeppelin/contracts/build/contracts/IERC20Metadata.json
+      eventHandlers:
+        - event: Transfer(indexed address,indexed address,uint256)
+          handler: handleTransfer
+      file: ./src/mapping-template.ts
+  - kind: ethereum/contract
+    name: USDY
+    network: mainnet
+    source:
+      address: "0x96f6ef951840721adbf46ac996b59e0235cb985c"
+      abi: IERC20
+      startBlock: 17672244
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.6
+      language: wasm/assemblyscript
+      entities:
+        - ERC20Contract
+      abis:
+        - name: IERC20
+          file: ./node_modules/@openzeppelin/contracts/build/contracts/IERC20Metadata.json
+      eventHandlers:
+        - event: Transfer(indexed address,indexed address,uint256)
+          handler: handleTransfer
+      file: ./src/mapping-template.ts
+  - kind: ethereum/contract
+    name: VIRTUAL
+    network: mainnet
+    source:
+      address: "0x44ff8620b8cA30902395A7bD3F2407e1A091BF73"
+      abi: IERC20
+      startBlock: 18846349
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.6
+      language: wasm/assemblyscript
+      entities:
+        - ERC20Contract
+      abis:
+        - name: IERC20
+          file: ./node_modules/@openzeppelin/contracts/build/contracts/IERC20Metadata.json
+      eventHandlers:
+        - event: Transfer(indexed address,indexed address,uint256)
+          handler: handleTransfer
+      file: ./src/mapping-template.ts
+  - kind: ethereum/contract
+    name: VSN
+    network: mainnet
+    source:
+      address: "0x699ccf919c1dfdfa4c374292f42cadc9899bf753"
+      abi: IERC20
+      startBlock: 22688805
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.6
+      language: wasm/assemblyscript
+      entities:
+        - ERC20Contract
+      abis:
+        - name: IERC20
+          file: ./node_modules/@openzeppelin/contracts/build/contracts/IERC20Metadata.json
+      eventHandlers:
+        - event: Transfer(indexed address,indexed address,uint256)
+          handler: handleTransfer
+      file: ./src/mapping-template.ts
+  - kind: ethereum/contract
+    name: W
+    network: mainnet
+    source:
+      address: "0xB0fFa8000886e57F86dd5264b9582b2Ad87b2b91"
+      abi: IERC20
+      startBlock: 19663982
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.6
+      language: wasm/assemblyscript
+      entities:
+        - ERC20Contract
+      abis:
+        - name: IERC20
+          file: ./node_modules/@openzeppelin/contracts/build/contracts/IERC20Metadata.json
+      eventHandlers:
+        - event: Transfer(indexed address,indexed address,uint256)
+          handler: handleTransfer
+      file: ./src/mapping-template.ts
+  - kind: ethereum/contract
+    name: WLD
+    network: mainnet
+    source:
+      address: "0x163f8c2467924be0ae7b5347228cabf260318753"
+      abi: IERC20
+      startBlock: 17714705
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.6
+      language: wasm/assemblyscript
+      entities:
+        - ERC20Contract
+      abis:
+        - name: IERC20
+          file: ./node_modules/@openzeppelin/contracts/build/contracts/IERC20Metadata.json
+      eventHandlers:
+        - event: Transfer(indexed address,indexed address,uint256)
+          handler: handleTransfer
+      file: ./src/mapping-template.ts
+  - kind: ethereum/contract
+    name: WLFI
+    network: mainnet
+    source:
+      address: "0xdA5e1988097297dCdc1f90D4dFE7909e847CBeF6"
+      abi: IERC20
+      startBlock: 20857295
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.6
+      language: wasm/assemblyscript
+      entities:
+        - ERC20Contract
+      abis:
+        - name: IERC20
+          file: ./node_modules/@openzeppelin/contracts/build/contracts/IERC20Metadata.json
+      eventHandlers:
+        - event: Transfer(indexed address,indexed address,uint256)
+          handler: handleTransfer
+      file: ./src/mapping-template.ts
+  - kind: ethereum/contract
+    name: XAUt
+    network: mainnet
+    source:
+      address: "0x68749665FF8D2d112Fa859AA293F07A622782F38"
+      abi: IERC20
+      startBlock: 13524498
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.6
+      language: wasm/assemblyscript
+      entities:
+        - ERC20Contract
+      abis:
+        - name: IERC20
+          file: ./node_modules/@openzeppelin/contracts/build/contracts/IERC20Metadata.json
+      eventHandlers:
+        - event: Transfer(indexed address,indexed address,uint256)
+          handler: handleTransfer
+      file: ./src/mapping-template.ts
+  - kind: ethereum/contract
+    name: XCN
+    network: mainnet
+    source:
+      address: "0xA2cd3D43c775978A96BdBf12d733D5A1ED94fb18"
+      abi: IERC20
+      startBlock: 14342018
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.6
+      language: wasm/assemblyscript
+      entities:
+        - ERC20Contract
+      abis:
+        - name: IERC20
+          file: ./node_modules/@openzeppelin/contracts/build/contracts/IERC20Metadata.json
+      eventHandlers:
+        - event: Transfer(indexed address,indexed address,uint256)
+          handler: handleTransfer
+      file: ./src/mapping-template.ts
+  - kind: ethereum/contract
+    name: ZBU
+    network: mainnet
+    source:
+      address: "0xe77f6aCD24185e149e329C1C0F479201b9Ec2f4B"
+      abi: IERC20
+      startBlock: 20887461
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.6
+      language: wasm/assemblyscript
+      entities:
+        - ERC20Contract
+      abis:
+        - name: IERC20
+          file: ./node_modules/@openzeppelin/contracts/build/contracts/IERC20Metadata.json
+      eventHandlers:
+        - event: Transfer(indexed address,indexed address,uint256)
+          handler: handleTransfer
+      file: ./src/mapping-template.ts
+  - kind: ethereum/contract
+    name: ZRO
+    network: mainnet
+    source:
+      address: "0x6985884C4392D348587B19cb9eAAf157F13271cd"
+      abi: IERC20
+      startBlock: 19678360
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.6
+      language: wasm/assemblyscript
+      entities:
+        - ERC20Contract
+      abis:
+        - name: IERC20
+          file: ./node_modules/@openzeppelin/contracts/build/contracts/IERC20Metadata.json
+      eventHandlers:
+        - event: Transfer(indexed address,indexed address,uint256)
+          handler: handleTransfer
+      file: ./src/mapping-template.ts
+  - kind: ethereum/contract
+    name: ZRX
+    network: mainnet
+    source:
+      address: "0xe41d2489571d322189246dafa5ebde1f4699f498"
+      abi: IERC20
+      startBlock: 4145415
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.6
+      language: wasm/assemblyscript
+      entities:
+        - ERC20Contract
+      abis:
+        - name: IERC20
+          file: ./node_modules/@openzeppelin/contracts/build/contracts/IERC20Metadata.json
+      eventHandlers:
+        - event: Transfer(indexed address,indexed address,uint256)
+          handler: handleTransfer
+      file: ./src/mapping-template.ts
