@@ -1,6 +1,6 @@
 {
   "name": "@gu-corp/erc20-subgraph",
-  "version": "1.0.1-build.5",
+  "version": "1.0.1-build.6",
   "description": "Subgraph for indexing all ERC20 token balances and approvals",
   "scripts": {
     "clean": "rimraf build generated",
