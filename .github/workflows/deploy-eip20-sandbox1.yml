@@ -33,7 +33,7 @@ jobs:
       # Register the subgraph name (only needed the first time; ignore "already exists" on redeploys)
       - name: Create subgraph
         continue-on-error: true
-        run: npm run create eip-20-sandbox1 -- --node "$ADMIN_NODE"
+        run: npm run create gugroup/eip-20 -- --node "$ADMIN_NODE"
       - name: Start IPFS auth proxy
         env:
           IPFS_PASS: ${{ secrets.SANDBOX1_GRAPHNODE_ADMIN_PASSWORD }}
@@ -44,7 +44,7 @@ jobs:
           done
       - name: Deploy subgraph
         run: >
-          npm run deploy eip-20-sandbox1 --
+          npm run deploy gugroup/eip-20 --
           --node "$ADMIN_NODE"
           --ipfs "$IPFS_NODE"
           --version-label ${{ github.ref_name }}
