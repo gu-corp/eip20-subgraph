@@ -1,0 +1,38 @@
+name: Deploy eip20 sandbox1
+run-name: Deploy eip20 subgraph ${{ github.ref_name }} for sandbox1 by @${{ github.actor }}
+on:
+  workflow_dispatch:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}-${{ github.actor }}
+  cancel-in-progress: true
+
+env:
+  ADMIN_NODE: https://admin:${{ secrets.SANDBOX1_GRAPHNODE_ADMIN_PASSWORD }}@admin.graphnode.sandbox1.japanopenchain.org
+  IPFS_NODE: https://admin:${{ secrets.SANDBOX1_GRAPHNODE_ADMIN_PASSWORD }}@ipfs.graphnode.sandbox1.japanopenchain.org
+
+jobs:
+  subgraph:
+    name: Subgraph - Deploy
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 22
+          cache: "npm"
+      - run: npm install
+      - run: npm run clean
+      - run: cp subgraph-sandbox1.yaml subgraph.yaml
+      - run: npm run codegen
+      - run: npm run build
+      # Register the subgraph name (only needed the first time; ignore "already exists" on redeploys)
+      - name: Create subgraph
+        continue-on-error: true
+        run: npm run create eip-20-sandbox1 -- --node "$ADMIN_NODE"
+      - name: Deploy subgraph
+        run: >
+          npm run deploy eip-20-sandbox1 --
+          --node "$ADMIN_NODE"
+          --ipfs "$IPFS_NODE"
+          --version-label ${{ github.ref_name }}
