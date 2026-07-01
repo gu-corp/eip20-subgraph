@@ -9,7 +9,7 @@ import {
 
 import {
 	Transfer as TransferEvent,
-} from '../generated/EIP20/IERC20'
+} from '../generated/templates/EIP20/IERC20'
 
 import {
 	decimals,
@@ -25,7 +25,7 @@ import {
 
 import {
 	IERC20,
-} from '../generated/EIP20/IERC20'
+} from '../generated/templates/EIP20/IERC20'
 
 import {
 	constants,

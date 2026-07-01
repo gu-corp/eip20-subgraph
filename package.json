@@ -1,6 +1,6 @@
 {
   "name": "@gu-corp/erc20-subgraph",
-  "version": "1.0.1-build.1",
+  "version": "1.0.1-build.6",
   "description": "Subgraph for indexing all ERC20 token balances and approvals",
   "scripts": {
     "clean": "rimraf build generated",
@@ -11,9 +11,11 @@
     "build": "graph build",
     "deploy": "graph deploy",
     "graph": "graph",
-    "gen:subgraph-yaml": "node ./scripts/gen-subgraph-yaml.js",
-    "gen:subgraph-yaml:sepolia": "node ./scripts/gen-subgraph-yaml.js --network sepolia",
-    "gen:subgraph-yaml:mainnet": "node ./scripts/gen-subgraph-yaml.js --network mainnet"
+    "gen:yaml:cmc": "node ./scripts/gen-yaml-from-cmc.js",
+    "gen:yaml:cmc:mainnet": "node ./scripts/gen-yaml-from-cmc.js --network mainnet",
+    "gen:yaml:tokenlist": "node ./scripts/gen-yaml-from-tokenlist.js",
+    "gen:yaml:tokenlist:mainnet": "node ./scripts/gen-yaml-from-tokenlist.js --network mainnet",
+    "gen:yaml:tokenlist:sepolia": "node ./scripts/gen-yaml-from-tokenlist.js --network sepolia"
   },
   "license": "MIT",
   "dependencies": {
