@@ -8,8 +8,12 @@ concurrency:
   cancel-in-progress: true
 
 env:
+  # graph-cli talks to the admin RPC via a client that accepts credentials in the URL.
   ADMIN_NODE: https://admin:${{ secrets.SANDBOX1_GRAPHNODE_ADMIN_PASSWORD }}@admin.graphnode.sandbox1.japanopenchain.org
-  IPFS_NODE: https://admin:${{ secrets.SANDBOX1_GRAPHNODE_ADMIN_PASSWORD }}@ipfs.graphnode.sandbox1.japanopenchain.org
+  # IPFS upload uses fetch(), which rejects credentials in the URL, so we go through
+  # a local proxy (see the "Start IPFS auth proxy" step) that injects Basic Auth.
+  IPFS_TARGET: https://ipfs.graphnode.sandbox1.japanopenchain.org
+  IPFS_NODE: http://127.0.0.1:5001
 
 jobs:
   subgraph:
@@ -30,6 +34,14 @@ jobs:
       - name: Create subgraph
         continue-on-error: true
         run: npm run create eip-20-sandbox1 -- --node "$ADMIN_NODE"
+      - name: Start IPFS auth proxy
+        env:
+          IPFS_PASS: ${{ secrets.SANDBOX1_GRAPHNODE_ADMIN_PASSWORD }}
+        run: |
+          node scripts/ipfs-auth-proxy.mjs &
+          for i in $(seq 1 20); do
+            curl -sf -X POST -o /dev/null "$IPFS_NODE/api/v0/version" && break || sleep 0.5
+          done
       - name: Deploy subgraph
         run: >
           npm run deploy eip-20-sandbox1 --
