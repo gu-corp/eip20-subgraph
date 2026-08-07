@@ -17,7 +17,7 @@ templates:
         - ERC20Contract
       abis:
         - name: IERC20
-          file: ./node_modules/@openzeppelin/contracts/build/contracts/IERC20Metadata.json
+          file: ./abis/IERC20Metadata.json
       eventHandlers:
         - event: Transfer(indexed address,indexed address,uint256)
           handler: handleTransfer

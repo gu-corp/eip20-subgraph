@@ -1,5 +1,6 @@
 import {
 	Address,
+	BigDecimal,
 	log,
 } from '@graphprotocol/graph-ts'
 
@@ -34,19 +35,25 @@ import {
 const DEFAULT_DECIMALS = 18
 const MAX_DECIMALS = 36 // safe cap for BigDecimal math
 
-function normalizeDecimals(dec: i32): i32 {
-  if (dec < 0) return 0
-  if (dec > MAX_DECIMALS) {
-    log.warning('Capping absurd decimals {} to {}', [dec.toString(), MAX_DECIMALS.toString()])
-    return MAX_DECIMALS
-  }
-  return dec
-}
-
 export function fetchAccount(address: Address): Account {
 	let account = new Account(address)
 	account.save()
 	return account
+}
+
+export function fetchERC20Decimals(endpoint: IERC20): i32 {
+	let decimalsResult = endpoint.try_decimals();
+	if (decimalsResult.reverted) {
+		return DEFAULT_DECIMALS;
+	}
+
+	// Ignore any weird tokens to avoid overflowing the `decimals` field (which is an i32)
+	// On mainnet for example there is at least one token which has a huge value for `decimals`
+	// and that would overflow the Token entity's i32 field for the decimals
+	if (decimalsResult.value.toBigDecimal().gt(BigDecimal.fromString("255"))) {
+		return MAX_DECIMALS;
+	}
+	return decimalsResult.value.toI32()
 }
 
 export function fetchERC20(address: Address): ERC20Contract {
@@ -56,13 +63,13 @@ export function fetchERC20(address: Address): ERC20Contract {
 		let endpoint         = IERC20.bind(address)
 		let name             = endpoint.try_name()
 		let symbol           = endpoint.try_symbol()
-		let decimals         = endpoint.try_decimals()
+		let decimals         = fetchERC20Decimals(endpoint)
 
 		// Common
 		contract             = new ERC20Contract(address)
 		contract.name        = name.reverted     ? null : name.value
 		contract.symbol      = symbol.reverted   ? null : symbol.value
-		contract.decimals    = decimals.reverted ? DEFAULT_DECIMALS   : normalizeDecimals(decimals.value)
+		contract.decimals    = decimals
 		contract.totalSupply = fetchERC20Balance(contract as ERC20Contract, null).id
 		contract.asAccount   = address
 		contract.save()
